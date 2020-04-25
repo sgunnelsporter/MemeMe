@@ -26,9 +26,15 @@ class ViewController: UIViewController {
 
 
     @IBAction func chooseFromAlbum(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .photoLibrary
+        present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func takeNewPicture(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .camera
+        present(pickerController, animated: true, completion: nil)
     }
     
 }
