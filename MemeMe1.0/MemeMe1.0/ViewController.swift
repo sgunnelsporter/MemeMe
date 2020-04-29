@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var topText: UITextField!
+    @IBOutlet weak var bottomText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +30,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func chooseFromAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
+        pickerController.delegate = self
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func takeNewPicture(_ sender: Any) {
         let pickerController = UIImagePickerController()
+        pickerController.delegate = self
         pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            self.memeImage.image = image
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }
