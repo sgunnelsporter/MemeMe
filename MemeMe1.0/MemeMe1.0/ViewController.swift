@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+    
+    var activeTextField: UITextField?
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
@@ -74,10 +76,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //MARK: Text Field Display Control
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      // set the activeTextField to the selected textfield
+      self.activeTextField = textField
+    }
+    
     @objc func keyboardWillShow(_ notification:Notification) {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-        view.frame.origin.y -= keyboardSize.cgRectValue.height
+        if let activeTextField = activeTextField {
+
+          let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+          
+            let topOfKeyboard = self.view.frame.height - keyboardSize.cgRectValue.height
+
+          // if the bottom of Textfield is below the top of keyboard, move up
+          if bottomOfTextField > topOfKeyboard {
+            view.frame.origin.y -= keyboardSize.cgRectValue.height
+          }
+        }
     }
     
     @objc func keyboardWillHide(_ notification: Notification){
@@ -85,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.activeTextField = nil
         textField.resignFirstResponder()
         return true
     }
