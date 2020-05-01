@@ -35,22 +35,48 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ghz-dD-7gV"/>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
+                                <rect key="frame" x="0.0" y="104" width="414" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
+                                <rect key="frame" x="0.0" y="722.5" width="414" height="30.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="23n-u8-IeR"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5cE-we-35J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kxJ-cQ-kc2" secondAttribute="trailing" id="JPh-c7-PgL"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MF1-Ti-e4A"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="kxJ-cQ-kc2" secondAttribute="top" constant="-60" id="NwC-qd-IgZ"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UJg-VB-dUt"/>
+                            <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V0q-7o-o0Y"/>
+                            <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-60" id="c2M-27-OX6"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="doe-w9-hr4"/>
+                            <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" secondItem="7Q0-5C-MCv" secondAttribute="bottom" id="gr3-5b-EdU"/>
+                            <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j4I-gA-ZAd"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tG1-lj-8Tp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo0-dR-CeX" secondAttribute="trailing" id="z3t-Wm-YAS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="mo0-dR-CeX" id="U53-ay-Jeg"/>
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
+                        <outlet property="memeImage" destination="7Q0-5C-MCv" id="h9N-HL-p4d"/>
+                        <outlet property="topText" destination="kxJ-cQ-kc2" id="n1D-Tu-zEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
