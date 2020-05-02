@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var activeTextField: UITextField?
 
     // MARK: View Outlet Defitions
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var topText: UITextField!
@@ -31,6 +32,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // If an image is not yet selected disable share button
+        if memeImage.image == nil {
+            shareButton.isEnabled = false
+        } else {
+            shareButton.isEnabled = true
+        }
         
         // If camera is not available on device, disable the camera button
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -119,7 +127,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
-        let theMemeImage = UIImage(named: "testImage")
+        UIGraphicsBeginImageContextWithOptions(self.memeImage.image!.size, true, UIScreen.main.scale)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //let theMemeImage = UIImage(named: "testImage")
         
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {

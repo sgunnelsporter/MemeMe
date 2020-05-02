@@ -91,6 +91,7 @@
                         <outlet property="bottomText" destination="mo0-dR-CeX" id="U53-ay-Jeg"/>
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
                         <outlet property="memeImage" destination="7Q0-5C-MCv" id="h9N-HL-p4d"/>
+                        <outlet property="shareButton" destination="Sgj-9M-ef0" id="Rai-vR-KZB"/>
                         <outlet property="topText" destination="kxJ-cQ-kc2" id="n1D-Tu-zEW"/>
                     </connections>
                 </viewController>
