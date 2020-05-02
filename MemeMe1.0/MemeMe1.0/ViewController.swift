@@ -98,7 +98,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidBeginEditing(_ textField: UITextField) {
       // set the activeTextField to the selected textfield
       self.activeTextField = textField
+        
+        // clear defualt text
+        if textField.text == "TOP TEXT" || textField.text == "BOTTOM TEXT" {
+            textField.text = ""
+        }
     }
+
     
     @objc func keyboardWillShow(_ notification:Notification) {
         // Get keyboard display size
@@ -153,8 +159,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Resetting for new Meme
     @IBAction func resetMeme(_ sender: Any) {
-        self.bottomText.text = nil
-        self.topText.text = nil
+        self.bottomText.text = "BOTTOM TEXT"
+        self.topText.text = "TOP TEXT"
         self.memeImage.image = nil
         self.shareButton.isEnabled = false
     }
