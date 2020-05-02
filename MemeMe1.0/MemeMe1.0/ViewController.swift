@@ -24,10 +24,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Default Text attributes
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.black,
-        NSAttributedString.Key.foregroundColor: UIColor.white,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  Float(3)
+        .foregroundColor: UIColor.white,
+        .strokeColor: UIColor.black,
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        .strokeWidth:  Float(-3.0)
     ]
     
     
@@ -98,7 +98,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidBeginEditing(_ textField: UITextField) {
       // set the activeTextField to the selected textfield
       self.activeTextField = textField
+        
+        // clear defualt text
+        if textField.text == "TOP TEXT" || textField.text == "BOTTOM TEXT" {
+            textField.text = ""
+        }
     }
+
     
     @objc func keyboardWillShow(_ notification:Notification) {
         // Get keyboard display size
@@ -153,8 +159,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Resetting for new Meme
     @IBAction func resetMeme(_ sender: Any) {
-        self.bottomText.text = nil
-        self.topText.text = nil
+        self.bottomText.text = "BOTTOM TEXT"
+        self.topText.text = "TOP TEXT"
         self.memeImage.image = nil
         self.shareButton.isEnabled = false
     }

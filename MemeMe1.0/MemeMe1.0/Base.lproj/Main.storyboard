@@ -42,13 +42,15 @@
                                     <constraint firstAttribute="height" constant="725" id="yQe-Yh-dm5"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
                                 <rect key="frame" x="0.0" y="105.5" width="414" height="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
                                 <rect key="frame" x="0.0" y="757.5" width="414" height="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
