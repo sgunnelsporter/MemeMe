@@ -24,10 +24,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Default Text attributes
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.black,
-        NSAttributedString.Key.foregroundColor: UIColor.white,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  Float(3)
+        .foregroundColor: UIColor.white,
+        .strokeColor: UIColor.black,
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        .strokeWidth:  Float(-3.0)
     ]
     
     
