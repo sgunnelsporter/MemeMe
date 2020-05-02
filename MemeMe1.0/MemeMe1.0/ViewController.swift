@@ -118,10 +118,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
+        
     }
     
     //MARK: Resetting for new Meme
     @IBAction func resetMeme(_ sender: Any) {
+        self.bottomText.text = nil
+        self.topText.text = nil
+        self.memeImage.image = nil
     }
     
     
