@@ -35,22 +35,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // If an image is not yet selected disable share button
         if memeImage.image == nil {
-            shareButton.isEnabled = false
+            self.shareButton.isEnabled = false
         } else {
-            shareButton.isEnabled = true
+            self.shareButton.isEnabled = true
         }
         
         // If camera is not available on device, disable the camera button
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         // Set textField defaults
-        topText.delegate = self
-        topText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .center
+        self.topText.delegate = self
+        self.topText.defaultTextAttributes = memeTextAttributes
+        self.topText.textAlignment = .center
 
-        bottomText.delegate = self
-        bottomText.defaultTextAttributes = memeTextAttributes
-        bottomText.textAlignment = .center
+        self.bottomText.delegate = self
+        self.bottomText.defaultTextAttributes = memeTextAttributes
+        self.bottomText.textAlignment = .center
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -83,6 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             self.memeImage.image = image
+            self.shareButton.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -148,6 +149,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.bottomText.text = nil
         self.topText.text = nil
         self.memeImage.image = nil
+        self.shareButton.isEnabled = false
     }
     
     
