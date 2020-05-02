@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var activeTextField: UITextField?
 
     // MARK: View Outlet Defitions
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var topText: UITextField!
@@ -32,17 +33,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // If an image is not yet selected disable share button
+        if memeImage.image == nil {
+            self.shareButton.isEnabled = false
+        } else {
+            self.shareButton.isEnabled = true
+        }
+        
         // If camera is not available on device, disable the camera button
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         // Set textField defaults
-        topText.delegate = self
-        topText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .center
+        self.topText.delegate = self
+        self.topText.defaultTextAttributes = memeTextAttributes
+        self.topText.textAlignment = .center
 
-        bottomText.delegate = self
-        bottomText.defaultTextAttributes = memeTextAttributes
-        bottomText.textAlignment = .center
+        self.bottomText.delegate = self
+        self.bottomText.defaultTextAttributes = memeTextAttributes
+        self.bottomText.textAlignment = .center
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -75,6 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             self.memeImage.image = image
+            self.shareButton.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -115,5 +124,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.resignFirstResponder()
         return true
     }
+    
+    //MARK: Share Meme Control
+    @IBAction func shareMeme(_ sender: Any) {
+        // Capture Meme
+        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: view.bounds.size.width,height: view.bounds.size.height)
+
+        UIGraphicsBeginImageContext(self.memeImage.frame.size)
+        view.drawHierarchy(in: bounds, afterScreenUpdates: true)
+        let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // Open Share Controller to share meme
+        if let finalImage = theMemeImage {
+            let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            present(sharingController, animated: true)
+        } else {
+            print("Error creating Meme Image!")
+        }
+        
+    }
+    
+    //MARK: Resetting for new Meme
+    @IBAction func resetMeme(_ sender: Any) {
+        self.bottomText.text = nil
+        self.topText.text = nil
+        self.memeImage.image = nil
+        self.shareButton.isEnabled = false
+    }
+    
+    
 }
 

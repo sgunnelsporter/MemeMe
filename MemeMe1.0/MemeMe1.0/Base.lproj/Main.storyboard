@@ -36,32 +36,55 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="725" id="yQe-Yh-dm5"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
-                                <rect key="frame" x="0.0" y="104" width="414" height="33"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
-                                <rect key="frame" x="0.0" y="722.5" width="414" height="30.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
+                                <rect key="frame" x="0.0" y="760" width="414" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-8V-fer">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Meme Me" id="7If-AA-1ef">
+                                        <barButtonItem key="leftBarButtonItem" title="Share Button" image="square.and.arrow.up" catalog="system" id="Sgj-9M-ef0">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="9av-r6-yU9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="77A-Sl-y66">
+                                            <connections>
+                                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="23n-u8-IeR"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5cE-we-35J"/>
+                            <constraint firstItem="cEa-8V-fer" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Deb-nT-oCP"/>
+                            <constraint firstItem="cEa-8V-fer" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hg1-Bi-NmM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kxJ-cQ-kc2" secondAttribute="trailing" id="JPh-c7-PgL"/>
-                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MF1-Ti-e4A"/>
-                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="kxJ-cQ-kc2" secondAttribute="top" constant="-60" id="NwC-qd-IgZ"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="cEa-8V-fer" secondAttribute="bottom" id="MF1-Ti-e4A"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="kxJ-cQ-kc2" secondAttribute="top" constant="-20" id="NwC-qd-IgZ"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UJg-VB-dUt"/>
                             <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V0q-7o-o0Y"/>
-                            <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-60" id="c2M-27-OX6"/>
+                            <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-20" id="c2M-27-OX6"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="doe-w9-hr4"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" secondItem="7Q0-5C-MCv" secondAttribute="bottom" id="gr3-5b-EdU"/>
                             <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j4I-gA-ZAd"/>
+                            <constraint firstItem="cEa-8V-fer" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ppU-91-ccE"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tG1-lj-8Tp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo0-dR-CeX" secondAttribute="trailing" id="z3t-Wm-YAS"/>
                         </constraints>
@@ -70,7 +93,9 @@
                     <connections>
                         <outlet property="bottomText" destination="mo0-dR-CeX" id="U53-ay-Jeg"/>
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
+                        <outlet property="imageViewHeightContraint" destination="yQe-Yh-dm5" id="Ze4-l3-nqR"/>
                         <outlet property="memeImage" destination="7Q0-5C-MCv" id="h9N-HL-p4d"/>
+                        <outlet property="shareButton" destination="Sgj-9M-ef0" id="NoU-Nh-YxQ"/>
                         <outlet property="topText" destination="kxJ-cQ-kc2" id="n1D-Tu-zEW"/>
                     </connections>
                 </viewController>
@@ -81,5 +106,6 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
