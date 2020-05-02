@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     //MARK: Default Text attributes
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -32,6 +34,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Set image view height & width based on screen size
+        //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
+        self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
         
         // If an image is not yet selected disable share button
         if memeImage.image == nil {
@@ -82,7 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            self.memeImage.image = image
+            setImage(image: image)
             self.shareButton.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
@@ -154,5 +160,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    //MARK: Controlling UIImageView Sizing
+    func setImage(image: UIImage) {
+        self.memeImage.image = image
+        let screenSize = UIScreen.main.bounds.size
+
+        let imageAspectRatio = image.size.width / image.size.height
+        let screenAspectRatio = screenSize.width / screenSize.height
+
+        if imageAspectRatio > screenAspectRatio {
+            self.imageViewWidthConstraint.constant = min(image.size.width, screenSize.width)
+            self.imageViewHeightConstraint.constant = self.imageViewWidthConstraint.constant / imageAspectRatio
+        }
+        else {
+            self.imageViewHeightConstraint.constant = min(image.size.height, screenSize.height)
+            self.imageViewWidthConstraint.constant = self.imageViewHeightConstraint.constant * imageAspectRatio
+        }
+        view.layoutIfNeeded()
+    }
 }
 
