@@ -115,5 +115,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.resignFirstResponder()
         return true
     }
+    
+    //MARK: Share Meme Control
+    @IBAction func shareMeme(_ sender: Any) {
+    }
+    
+    //MARK: Resetting for new Meme
+    @IBAction func resetMeme(_ sender: Any) {
+    }
+    
+    
 }
 
