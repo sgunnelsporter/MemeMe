@@ -118,6 +118,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
+        // Capture Meme
+        let theMemeImage = UIImage(named: "testImage")
+        
+        // Open Share Controller to share meme
+        if let finalImage = theMemeImage {
+            let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            present(sharingController, animated: true)
+        } else {
+            print("Error creating Meme Image!")
+        }
         
     }
     
