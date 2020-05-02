@@ -57,7 +57,7 @@
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="9av-r6-yU9"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Reset" id="77A-Sl-y66">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="77A-Sl-y66">
                                             <connections>
                                                 <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
                                             </connections>
