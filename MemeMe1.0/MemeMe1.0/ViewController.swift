@@ -128,11 +128,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
-        UIGraphicsBeginImageContextWithOptions(self.memeImage.image!.size, true, UIScreen.main.scale)
-        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: view.bounds.size.width,height: view.bounds.size.height)
+
+        UIGraphicsBeginImageContext(self.memeImage.frame.size)
+        view.drawHierarchy(in: bounds, afterScreenUpdates: true)
         let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        //let theMemeImage = UIImage(named: "testImage")
         
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {
