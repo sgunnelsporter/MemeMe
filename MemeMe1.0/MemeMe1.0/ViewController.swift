@@ -157,8 +157,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    //MARK: Options Menu Control
+    @IBAction func optionsMenuSelection(_ sender: Any) {
+        // Create alert view
+        let optionsAlert = UIAlertController()
+        optionsAlert.title = "Choose Option"
+        
+        // Create actions
+        let changeFontAction = UIAlertAction(title: "Change Font", style: UIAlertAction.Style.default) { action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let resetMemeAction = UIAlertAction(title: "Reset Meme", style: UIAlertAction.Style.default) { action in self.resetMeme()
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { action in self.dismiss(animated: true, completion: nil)
+        }
+
+        // Add actions to alert view
+        optionsAlert.addAction(changeFontAction)
+        optionsAlert.addAction(resetMemeAction)
+        optionsAlert.addAction(cancelAction)
+        
+        // Present alert
+        self.present(optionsAlert, animated: true, completion: nil)
+    }
+    
+    
     //MARK: Resetting for new Meme
-    @IBAction func resetMeme(_ sender: Any) {
+    func resetMeme() {
         self.bottomText.text = "BOTTOM TEXT"
         self.topText.text = "TOP TEXT"
         self.memeImage.image = nil

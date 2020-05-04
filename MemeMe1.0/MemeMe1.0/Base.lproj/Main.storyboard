@@ -63,9 +63,9 @@
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="9av-r6-yU9"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="77A-Sl-y66">
+                                        <barButtonItem key="rightBarButtonItem" image="ellipsis" catalog="system" id="77A-Sl-y66">
                                             <connections>
-                                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
+                                                <action selector="optionsMenuSelection:" destination="BYZ-38-t0r" id="xza-LE-DK3"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -109,6 +109,7 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
