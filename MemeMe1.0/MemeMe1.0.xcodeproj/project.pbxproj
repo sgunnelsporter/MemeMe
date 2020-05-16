@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */; };
 		26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB2E2454C19C007D05EC /* AppDelegate.swift */; };
 		26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB302454C19C007D05EC /* SceneDelegate.swift */; };
 		26F7BB332454C19C007D05EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB322454C19C007D05EC /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextStylesViewController.swift; sourceTree = "<group>"; };
 		26F7BB2B2454C19B007D05EC /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F7BB2E2454C19C007D05EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F7BB302454C19C007D05EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				26F7BB2E2454C19C007D05EC /* AppDelegate.swift */,
 				26F7BB302454C19C007D05EC /* SceneDelegate.swift */,
 				26F7BB322454C19C007D05EC /* ViewController.swift */,
+				26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */,
 				26F7BB342454C19C007D05EC /* Main.storyboard */,
 				26F7BB372454C1A0007D05EC /* Assets.xcassets */,
 				26F7BB392454C1A0007D05EC /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				26F7BB332454C19C007D05EC /* ViewController.swift in Sources */,
 				26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */,
 				26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */,
+				26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

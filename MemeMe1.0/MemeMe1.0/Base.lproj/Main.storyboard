@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM1-Dq-sHX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Me-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,14 +21,12 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x58-ez-NoL"/>
                                     <barButtonItem image="camera.fill" catalog="system" id="Uw3-n7-Bmr" userLabel="CameraButton">
-                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="takeNewPicture:" destination="BYZ-38-t0r" id="7iW-Xf-taY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="0dZ-ZY-DtX"/>
                                     <barButtonItem title="Album" id="jFr-mr-uXX" userLabel="AlbumButton">
-                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="chooseFromAlbum:" destination="BYZ-38-t0r" id="BdK-Go-fN5"/>
                                         </connections>
@@ -63,46 +62,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-8V-fer">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Meme Me" id="7If-AA-1ef">
-                                        <barButtonItem key="leftBarButtonItem" title="Share Button" image="square.and.arrow.up" catalog="system" id="Sgj-9M-ef0">
-                                            <connections>
-                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="9av-r6-yU9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="77A-Sl-y66">
-                                            <connections>
-                                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="23n-u8-IeR"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5cE-we-35J"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="10" id="Boi-fM-Wo9"/>
-                            <constraint firstItem="cEa-8V-fer" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Deb-nT-oCP"/>
-                            <constraint firstItem="cEa-8V-fer" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hg1-Bi-NmM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kxJ-cQ-kc2" secondAttribute="trailing" id="JPh-c7-PgL"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="kxJ-cQ-kc2" secondAttribute="top" constant="-20" id="NwC-qd-IgZ"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UJg-VB-dUt"/>
                             <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V0q-7o-o0Y"/>
                             <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-20" id="c2M-27-OX6"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="doe-w9-hr4"/>
-                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cEa-8V-fer" secondAttribute="bottom" constant="10" id="erI-YW-OoE"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iJJ-0j-PeM"/>
                             <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j4I-gA-ZAd"/>
-                            <constraint firstItem="cEa-8V-fer" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ppU-91-ccE"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tG1-lj-8Tp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo0-dR-CeX" secondAttribute="trailing" id="z3t-Wm-YAS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Meme Me" id="7If-AA-1ef">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="77A-Sl-y66">
+                            <connections>
+                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Share Button" image="square.and.arrow.up" catalog="system" id="Sgj-9M-ef0">
+                                <connections>
+                                    <action selector="shareMeme:" destination="BYZ-38-t0r" id="9av-r6-yU9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="EditTextStyle" image="paintbrush" catalog="system" id="9BZ-7f-TCA">
+                                <connections>
+                                    <segue destination="Egk-QC-jgV" kind="presentation" id="GYz-6l-7KR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomText" destination="mo0-dR-CeX" id="U53-ay-Jeg"/>
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
@@ -115,12 +112,176 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Edit Text Style-->
+        <scene sceneID="Vir-5Q-G9s">
+            <objects>
+                <viewController title="Edit Text Style" id="Egk-QC-jgV" customClass="EditTextStylesViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iah-ab-25m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZY-WR-5Dj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                <items>
+                                    <navigationItem title="Edit Text Styles" id="HH1-yn-IS1">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="HGZ-1L-Knc">
+                                            <connections>
+                                                <action selector="CancelStyleChanges:" destination="Egk-QC-jgV" id="5QI-7l-KjE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="9ZH-a1-R7f"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-fP-l9l">
+                                <rect key="frame" x="20" y="123" width="374" height="596"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-Ib-w5R">
+                                        <rect key="frame" x="173" y="0.0" width="28.5" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11l-0u-83L">
+                                        <rect key="frame" x="166" y="91" width="42" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AQ9-Qc-MoF">
+                                        <rect key="frame" x="46" y="181.5" width="282" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEf-lD-aGe">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="51"/>
+                                                <color key="backgroundColor" name="MemePink"/>
+                                                <state key="normal" title="Text Color">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-IK-vn7">
+                                                <rect key="frame" x="100" y="0.0" width="88" height="51"/>
+                                                <color key="backgroundColor" name="MemeGray"/>
+                                                <state key="normal" title="Border Color">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-pi-Gbh">
+                                                <rect key="frame" x="218" y="0.0" width="64" height="51"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Text Font">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ZEf-lD-aGe" firstAttribute="width" secondItem="h3x-IK-vn7" secondAttribute="width" multiplier="0.795455" id="6iQ-Bj-c9b"/>
+                                            <constraint firstItem="h3x-IK-vn7" firstAttribute="width" secondItem="UUg-pi-Gbh" secondAttribute="width" multiplier="1.375" id="b6v-dY-oxM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="1fv-lg-q8g">
+                                        <rect key="frame" x="0.0" y="272.5" width="374" height="51"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-OG-miH">
+                                        <rect key="frame" x="159" y="363.5" width="56" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APl-Rc-DiE">
+                                        <rect key="frame" x="166" y="454.5" width="42" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J5x-SN-ebD">
+                                        <rect key="frame" x="46" y="545" width="282" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-K1-mwV">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="51"/>
+                                                <color key="backgroundColor" name="MemePink"/>
+                                                <state key="normal" title="Text Color">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-Sl-r6a">
+                                                <rect key="frame" x="100" y="0.0" width="88" height="51"/>
+                                                <color key="backgroundColor" name="MemeGray"/>
+                                                <state key="normal" title="Border Color">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-hY-X25">
+                                                <rect key="frame" x="218" y="0.0" width="64" height="51"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Text Font">
+                                                    <color key="titleColor" name="MemeWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="C0n-K1-mwV" firstAttribute="width" secondItem="gmm-Sl-r6a" secondAttribute="width" multiplier="0.795455" id="7kc-2h-TTN"/>
+                                            <constraint firstItem="gmm-Sl-r6a" firstAttribute="width" secondItem="Xeh-hY-X25" secondAttribute="width" multiplier="1.375" id="tto-9k-EmE"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QBA-77-1ns" firstAttribute="trailing" secondItem="kbd-fP-l9l" secondAttribute="trailing" constant="20" id="0rZ-hD-Sn4"/>
+                            <constraint firstItem="kbd-fP-l9l" firstAttribute="centerY" secondItem="iah-ab-25m" secondAttribute="centerY" priority="997" id="A3I-cE-XdJ"/>
+                            <constraint firstItem="LZY-WR-5Dj" firstAttribute="leading" secondItem="QBA-77-1ns" secondAttribute="leading" id="Asj-Lw-ABA"/>
+                            <constraint firstItem="kbd-fP-l9l" firstAttribute="top" secondItem="LZY-WR-5Dj" secondAttribute="bottom" constant="40" id="K2m-TA-2iP"/>
+                            <constraint firstItem="kbd-fP-l9l" firstAttribute="centerX" secondItem="iah-ab-25m" secondAttribute="centerX" id="XaQ-px-KfU"/>
+                            <constraint firstItem="LZY-WR-5Dj" firstAttribute="top" secondItem="QBA-77-1ns" secondAttribute="top" id="cQN-Bi-9Tl"/>
+                            <constraint firstItem="LZY-WR-5Dj" firstAttribute="trailing" secondItem="QBA-77-1ns" secondAttribute="trailing" id="hc9-lM-txI"/>
+                            <constraint firstItem="kbd-fP-l9l" firstAttribute="leading" secondItem="QBA-77-1ns" secondAttribute="leading" constant="20" id="oMV-65-NWu"/>
+                            <constraint firstItem="QBA-77-1ns" firstAttribute="bottom" secondItem="kbd-fP-l9l" secondAttribute="bottom" constant="40" id="w1H-qm-7TN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QBA-77-1ns"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwM-l2-CfD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="562-kS-wKT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="partialCurl" id="GM1-Dq-sHX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EoE-Xe-rdZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hOv-RZ-eGL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycc-sq-B7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="DefaultImage" width="1813" height="3022"/>
+        <image name="Divider" width="939" height="21"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="paintbrush" catalog="system" width="128" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="MemeGray">
+            <color red="0.35600000619888306" green="0.40599998831748962" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MemePink">
+            <color red="0.82700002193450928" green="0.33700001239776611" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MemeWhite">
+            <color red="0.95300000905990601" green="0.94900000095367432" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
