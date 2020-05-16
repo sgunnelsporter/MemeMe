@@ -124,7 +124,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
           // if the bottom of Textfield is below the top of keyboard, move up
           if bottomOfTextField > topOfKeyboard {
-            view.frame.origin.y -= keyboardSize.cgRectValue.height
+            view.frame.origin.y = -keyboardSize.cgRectValue.height
           }
         }
     }
