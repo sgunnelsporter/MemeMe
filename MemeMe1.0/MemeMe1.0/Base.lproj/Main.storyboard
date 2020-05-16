@@ -126,12 +126,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                                 <items>
                                     <navigationItem title="Edit Text Styles" id="HH1-yn-IS1">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="HGZ-1L-Knc">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HGZ-1L-Knc">
                                             <connections>
-                                                <action selector="CancelStyleChanges:" destination="Egk-QC-jgV" id="5QI-7l-KjE"/>
+                                                <action selector="cancelChanges:" destination="Egk-QC-jgV" id="Gph-uv-uXf"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="9ZH-a1-R7f"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9ZH-a1-R7f">
+                                            <connections>
+                                                <action selector="finishChanges:" destination="Egk-QC-jgV" id="do8-F0-sz1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -271,23 +275,38 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="diN-BY-hLJ">
             <objects>
-                <viewController id="j57-fy-Jag" sceneMemberID="viewController">
+                <viewController id="j57-fy-Jag" customClass="ColorPickerViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tcd-3E-2CS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M89-YI-D2b">
-                                <rect key="frame" x="142" y="60" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffL-No-4Ez">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Color Picker" id="gwG-kT-qzB">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HKM-HA-QCO">
+                                            <connections>
+                                                <action selector="cancelPicker:" destination="j57-fy-Jag" id="z8j-8n-8iT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LQv-Sv-eMA">
+                                            <connections>
+                                                <action selector="finishedPicker:" destination="j57-fy-Jag" id="Gwr-Td-kub"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ffL-No-4Ez" firstAttribute="leading" secondItem="Gzb-6P-Fd1" secondAttribute="leading" id="5wI-Kd-deR"/>
+                            <constraint firstItem="ffL-No-4Ez" firstAttribute="trailing" secondItem="Gzb-6P-Fd1" secondAttribute="trailing" id="Bfl-Id-d4u"/>
+                            <constraint firstItem="ffL-No-4Ez" firstAttribute="top" secondItem="Gzb-6P-Fd1" secondAttribute="top" id="OQm-gd-HGv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gzb-6P-Fd1"/>
                     </view>
                 </viewController>
@@ -295,23 +314,38 @@
             </objects>
             <point key="canvasLocation" x="2789" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Font Picker View Controller-->
         <scene sceneID="7bB-Ab-lmb">
             <objects>
-                <viewController id="1wI-36-oFI" sceneMemberID="viewController">
+                <viewController id="1wI-36-oFI" customClass="FontPickerViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="erb-P9-wbi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JX-en-Wdb">
-                                <rect key="frame" x="186" y="162" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-tR-3E6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Font Picker" id="ejb-3f-UBw">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Fef-h6-v5T">
+                                            <connections>
+                                                <action selector="cancelPicker:" destination="1wI-36-oFI" id="dlC-aF-zXi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="BH4-j9-d20">
+                                            <connections>
+                                                <action selector="finishPicker:" destination="1wI-36-oFI" id="meb-th-8LK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MtH-tR-3E6" firstAttribute="trailing" secondItem="C7K-uO-a9R" secondAttribute="trailing" id="Shf-uD-Qqw"/>
+                            <constraint firstItem="MtH-tR-3E6" firstAttribute="leading" secondItem="C7K-uO-a9R" secondAttribute="leading" id="pwK-RP-hy5"/>
+                            <constraint firstItem="MtH-tR-3E6" firstAttribute="top" secondItem="C7K-uO-a9R" secondAttribute="top" id="waS-bw-q4U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C7K-uO-a9R"/>
                     </view>
                 </viewController>

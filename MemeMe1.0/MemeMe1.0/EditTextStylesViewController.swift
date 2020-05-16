@@ -30,10 +30,14 @@ class EditTextStylesViewController: UIViewController {
     }
     
     //MARK: Cancel Button Action
-    @IBAction func CancelStyleChanges(_ sender: Any) {
+    @IBAction func cancelChanges(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func finishChanges(_ sender: Any) {
+        // Do Stuff!!!
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
