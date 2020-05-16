@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingScreen" translatesAutoresizingMaskIntoConstraints="NO" id="v6c-bB-KBY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingScreen" translatesAutoresizingMaskIntoConstraints="NO" id="v6c-bB-KBY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.89028435949999996" green="0.51401388650000002" blue="0.49651718140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
@@ -37,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoadingScreen" width="506" height="722"/>
+        <image name="LoadingScreen" width="1152" height="2048"/>
     </resources>
 </document>
