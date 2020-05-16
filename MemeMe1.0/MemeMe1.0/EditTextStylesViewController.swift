@@ -13,19 +13,23 @@ class EditTextStylesViewController: UIViewController {
     // MARK: Properties
     var topText: String?
     var bottomText: String?
+    var topTextProperties: [NSAttributedString.Key: Any]?
+    var bottomTextProperties: [NSAttributedString.Key: Any]?
     @IBOutlet weak var topTextDisplay: UILabel!
     @IBOutlet weak var bottomTextDisplay: UILabel!
     
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set-up the text displays
-        self.topTextDisplay.text = self.topText ?? "ERROR"
-        self.bottomTextDisplay.text = self.bottomText ?? "ERROR"
+        self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
+        self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
 
         // Do any additional setup after loading the view.
     }
     
+    //MARK: Cancel Button Action
     @IBAction func CancelStyleChanges(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

@@ -23,7 +23,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     //MARK: Default Text attributes
-    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+    var topTextProperties: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor.white,
+        .strokeColor: UIColor.black,
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        .strokeWidth:  Float(-3.0)
+    ]
+    var bottomTextProperties: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor.white,
         .strokeColor: UIColor.black,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
@@ -47,11 +53,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Set textField defaults
         self.topText.delegate = self
-        self.topText.defaultTextAttributes = memeTextAttributes
+        self.topText.defaultTextAttributes = self.topTextProperties
         self.topText.textAlignment = .center
 
         self.bottomText.delegate = self
-        self.bottomText.defaultTextAttributes = memeTextAttributes
+        self.bottomText.defaultTextAttributes = self.bottomTextProperties
         self.bottomText.textAlignment = .center
         
         // Set-up notification listening for keyboard actions
@@ -145,7 +151,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let controller = segue.destination as! EditTextStylesViewController
             controller.topText = self.topText.text ?? "Error on Top Text"
             controller.bottomText = self.bottomText.text ?? "Error on Bottom Text"
-            
+            controller.topTextProperties = self.topTextProperties
+            controller.bottomTextProperties = self.bottomTextProperties
         }
     }
     
