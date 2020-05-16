@@ -30,6 +30,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         .strokeWidth:  Float(-3.0)
     ]
     
+    //MARK: Other Properties
+    var editTextStylesSegueID = "editStyle"
+    
     
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
@@ -132,6 +135,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.activeTextField = nil
         textField.resignFirstResponder()
         return true
+    }
+    
+    //MARK: Edit Text Styles Control
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == self.editTextStylesSegueID {
+            
+            let controller = segue.destination as! EditTextStylesViewController
+            controller.topText = self.topText.text ?? "Error on Top Text"
+            controller.bottomText = self.bottomText.text ?? "Error on Bottom Text"
+            
+        }
     }
     
     //MARK: Share Meme Control

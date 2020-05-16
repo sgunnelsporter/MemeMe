@@ -9,9 +9,19 @@
 import UIKit
 
 class EditTextStylesViewController: UIViewController {
-
+    
+    // MARK: Properties
+    var topText: String?
+    var bottomText: String?
+    @IBOutlet weak var topTextDisplay: UILabel!
+    @IBOutlet weak var bottomTextDisplay: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set-up the text displays
+        self.topTextDisplay.text = self.topText ?? "ERROR"
+        self.bottomTextDisplay.text = self.bottomText ?? "ERROR"
 
         // Do any additional setup after loading the view.
     }
