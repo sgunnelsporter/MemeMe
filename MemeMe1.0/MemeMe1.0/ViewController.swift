@@ -39,13 +39,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
         self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
         
-        // If an image is not yet selected disable share button
-        if memeImage.image == nil {
-            self.shareButton.isEnabled = false
-        } else {
-            self.shareButton.isEnabled = true
-        }
-        
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
@@ -166,7 +159,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.bottomText.text = "BOTTOM TEXT"
         self.topText.text = "TOP TEXT"
         self.setImage(image: UIImage(named: "DefaultImage"))
-        self.shareButton.isEnabled = false
     }
     
     
