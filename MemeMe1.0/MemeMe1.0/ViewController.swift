@@ -61,14 +61,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Set-up notification listening for orientation changes
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Disable notification listening for keyboard actions
+        // Disable notification listening
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     // MARK: Image Picking Control
@@ -161,28 +165,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func resetMeme(_ sender: Any) {
         self.bottomText.text = "BOTTOM TEXT"
         self.topText.text = "TOP TEXT"
-        self.memeImage.image = nil
+        self.setImage(image: UIImage(named: "DefaultImage"))
         self.shareButton.isEnabled = false
     }
     
     
     //MARK: Controlling UIImageView Sizing
-    func setImage(image: UIImage) {
-        self.memeImage.image = image
-        let screenSize = UIScreen.main.bounds.size
+    func setImage(image: UIImage?) {
+        if let image = image {
+            self.memeImage.image = image
+            let screenSize = UIScreen.main.bounds.size
 
-        let imageAspectRatio = image.size.width / image.size.height
-        let screenAspectRatio = screenSize.width / screenSize.height
+            let imageAspectRatio = image.size.width / image.size.height
+            let screenAspectRatio = screenSize.width / screenSize.height
 
-        if imageAspectRatio > screenAspectRatio {
-            self.imageViewWidthConstraint.constant = min(image.size.width, screenSize.width)
-            self.imageViewHeightConstraint.constant = self.imageViewWidthConstraint.constant / imageAspectRatio
+            if imageAspectRatio > screenAspectRatio {
+                self.imageViewWidthConstraint.constant = min(image.size.width, screenSize.width)
+                self.imageViewHeightConstraint.constant = self.imageViewWidthConstraint.constant / imageAspectRatio
+            }
+            else {
+                self.imageViewHeightConstraint.constant = min(image.size.height, screenSize.height)
+                self.imageViewWidthConstraint.constant = self.imageViewHeightConstraint.constant * imageAspectRatio
+            }
+            view.layoutIfNeeded()
         }
-        else {
-            self.imageViewHeightConstraint.constant = min(image.size.height, screenSize.height)
-            self.imageViewWidthConstraint.constant = self.imageViewHeightConstraint.constant * imageAspectRatio
-        }
-        view.layoutIfNeeded()
+        return
+    }
+    
+    @objc func rotated() {
+        self.setImage(image: self.memeImage.image)
     }
 }
 
