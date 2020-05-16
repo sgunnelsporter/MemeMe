@@ -159,6 +159,9 @@
                                                 <state key="normal" title="Text Color">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" id="gjw-rN-Dwm"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-IK-vn7">
                                                 <rect key="frame" x="100" y="0.0" width="88" height="51"/>
@@ -166,6 +169,9 @@
                                                 <state key="normal" title="Border Color">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" id="WVv-e0-6pO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-pi-Gbh">
                                                 <rect key="frame" x="218" y="0.0" width="64" height="51"/>
@@ -173,6 +179,9 @@
                                                 <state key="normal" title="Text Font">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="1wI-36-oFI" kind="presentation" id="fm1-bR-YEz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -204,6 +213,9 @@
                                                 <state key="normal" title="Text Color">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" id="Mk6-CF-m6X"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-Sl-r6a">
                                                 <rect key="frame" x="100" y="0.0" width="88" height="51"/>
@@ -211,6 +223,9 @@
                                                 <state key="normal" title="Border Color">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" id="dJx-NM-YST"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-hY-X25">
                                                 <rect key="frame" x="218" y="0.0" width="64" height="51"/>
@@ -218,6 +233,9 @@
                                                 <state key="normal" title="Text Font">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="1wI-36-oFI" kind="presentation" id="Klz-NC-7Sh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -253,6 +271,54 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="137.94642857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="diN-BY-hLJ">
+            <objects>
+                <viewController id="j57-fy-Jag" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tcd-3E-2CS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M89-YI-D2b">
+                                <rect key="frame" x="142" y="60" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Gzb-6P-Fd1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Dd-Re-f07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789" y="-2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7bB-Ab-lmb">
+            <objects>
+                <viewController id="1wI-36-oFI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="erb-P9-wbi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JX-en-Wdb">
+                                <rect key="frame" x="186" y="162" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="C7K-uO-a9R"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ1-Az-iGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="659"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="562-kS-wKT">
             <objects>
@@ -272,6 +338,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fm1-bR-YEz"/>
+        <segue reference="WVv-e0-6pO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="DefaultImage" width="1813" height="3022"/>
         <image name="Divider" width="939" height="21"/>
