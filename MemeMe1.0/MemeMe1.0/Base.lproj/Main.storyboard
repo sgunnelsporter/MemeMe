@@ -35,22 +35,31 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ghz-dD-7gV"/>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
-                                <rect key="frame" x="0.0" y="85.5" width="414" height="725"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
+                                <rect key="frame" x="0.0" y="98" width="414" height="700"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" adjustable="YES"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="hDd-sS-ffC"/>
-                                    <constraint firstAttribute="height" constant="725" id="yQe-Yh-dm5"/>
+                                    <constraint firstAttribute="width" constant="414" id="4H1-1F-SZb"/>
+                                    <constraint firstAttribute="height" constant="700" id="ThX-jB-CfA"/>
                                 </constraints>
                             </imageView>
                             <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
-                                <rect key="frame" x="0.0" y="105.5" width="414" height="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
-                                <rect key="frame" x="0.0" y="757.5" width="414" height="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="745" width="414" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -76,6 +85,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="23n-u8-IeR"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5cE-we-35J"/>
+                            <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="10" id="Boi-fM-Wo9"/>
                             <constraint firstItem="cEa-8V-fer" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Deb-nT-oCP"/>
                             <constraint firstItem="cEa-8V-fer" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hg1-Bi-NmM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kxJ-cQ-kc2" secondAttribute="trailing" id="JPh-c7-PgL"/>
@@ -84,6 +94,7 @@
                             <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V0q-7o-o0Y"/>
                             <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-20" id="c2M-27-OX6"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="doe-w9-hr4"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cEa-8V-fer" secondAttribute="bottom" constant="10" id="erI-YW-OoE"/>
                             <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iJJ-0j-PeM"/>
                             <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j4I-gA-ZAd"/>
                             <constraint firstItem="cEa-8V-fer" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ppU-91-ccE"/>
@@ -95,8 +106,8 @@
                     <connections>
                         <outlet property="bottomText" destination="mo0-dR-CeX" id="U53-ay-Jeg"/>
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
-                        <outlet property="imageViewHeightConstraint" destination="yQe-Yh-dm5" id="fbo-1k-ml6"/>
-                        <outlet property="imageViewWidthConstraint" destination="hDd-sS-ffC" id="QRd-mW-IKr"/>
+                        <outlet property="imageViewHeightConstraint" destination="ThX-jB-CfA" id="YcS-5x-0Yl"/>
+                        <outlet property="imageViewWidthConstraint" destination="4H1-1F-SZb" id="rFn-cT-4R0"/>
                         <outlet property="memeImage" destination="7Q0-5C-MCv" id="h9N-HL-p4d"/>
                         <outlet property="shareButton" destination="Sgj-9M-ef0" id="NoU-Nh-YxQ"/>
                         <outlet property="topText" destination="kxJ-cQ-kc2" id="n1D-Tu-zEW"/>
@@ -108,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DefaultImage" width="1813" height="3022"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
