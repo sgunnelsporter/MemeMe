@@ -53,12 +53,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Set textField defaults
         self.topText.delegate = self
-        self.topText.defaultTextAttributes = self.topTextProperties
-        self.topText.textAlignment = .center
-        
         self.bottomText.delegate = self
-        self.bottomText.defaultTextAttributes = self.bottomTextProperties
-        self.bottomText.textAlignment = .center
+        self.setTextStyles()
+        
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -75,6 +72,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    func setTextStyles() {
+        self.topText.defaultTextAttributes = self.topTextProperties
+        self.topText.textAlignment = .center
+        self.bottomText.defaultTextAttributes = self.bottomTextProperties
+        self.bottomText.textAlignment = .center
     }
 
     // MARK: Image Picking Control

@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum StyleSender {
+    case topText
+    case topBorder
+    case topFont
+    case bottomText
+    case bottomBorder
+    case bottomFont
+}
+
 class EditTextStylesViewController: UIViewController {
     
     // MARK: Properties
@@ -24,10 +33,6 @@ class EditTextStylesViewController: UIViewController {
     var changeBottomTextColorSegueID = "changeBottomTextColor"
     var changeBottomBorderColorSegueID = "changeBottomBorderColor"
     var setChangesBackToMainSegueID = "setNewTextProperties"
-    enum FontSender {
-        case top
-        case bottom
-    }
     
     
     //MARK: viewDidLoad
@@ -35,8 +40,7 @@ class EditTextStylesViewController: UIViewController {
         super.viewDidLoad()
         
         // Set-up the text displays
-        self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
-        self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+        setViewTextDisplays()
 
         // Do any additional setup after loading the view.
     }
@@ -55,6 +59,8 @@ class EditTextStylesViewController: UIViewController {
             controller.greenValue = ciColor.green
             controller.blueValue = ciColor.blue
             
+            controller.identifier = StyleSender.topText
+            
         }
         
         if segue.identifier == self.changeTopBorderColorSegueID {
@@ -68,6 +74,7 @@ class EditTextStylesViewController: UIViewController {
             controller.greenValue = ciColor.green
             controller.blueValue = ciColor.blue
             
+            controller.identifier = StyleSender.topBorder
         }
         
         if segue.identifier == self.changeBottomTextColorSegueID {
@@ -81,6 +88,7 @@ class EditTextStylesViewController: UIViewController {
             controller.greenValue = ciColor.green
             controller.blueValue = ciColor.blue
             
+            controller.identifier = StyleSender.bottomText
         }
         
         if segue.identifier == self.changeBottomBorderColorSegueID {
@@ -94,6 +102,8 @@ class EditTextStylesViewController: UIViewController {
             controller.greenValue = ciColor.green
             controller.blueValue = ciColor.blue
             
+            controller.identifier = StyleSender.bottomBorder
+            
         }
         
         if segue.identifier == self.setChangesBackToMainSegueID {
@@ -101,21 +111,20 @@ class EditTextStylesViewController: UIViewController {
             
             controller.topTextProperties = self.topTextProperties!
             controller.bottomTextProperties = self.bottomTextProperties!
-            controller.topText.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
-            controller.bottomText.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+            controller.setTextStyles()
         }
     }
     
     //MARK: Change font button actions
     @IBAction func changeTopTextFont(_ sender: Any) {
-        self.presentFontChanger(FontSender.top, text: self.topText!)
+        self.presentFontChanger(StyleSender.topFont, text: self.topText!)
     }
     
     @IBAction func changeBottomTextFont(_ sender: Any) {
-        self.presentFontChanger(FontSender.bottom, text: self.bottomText!)
+        self.presentFontChanger(StyleSender.bottomFont, text: self.bottomText!)
     }
     
-    func presentFontChanger(_ id: FontSender, text: String) {
+    func presentFontChanger(_ id: StyleSender, text: String) {
         // Alert Title
         let controller = UIAlertController()
             controller.title = "Choose Font for:"
@@ -154,16 +163,23 @@ class EditTextStylesViewController: UIViewController {
         self.present(controller, animated: true, completion: nil)
     }
     
-    func setTextFont(_ id: FontSender, font: String) {
-        if id == FontSender.top {
+    func setTextFont(_ id: StyleSender, font: String) {
+        if id == StyleSender.topFont {
             self.topTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
-            self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
-        } else {
+        } else if id == StyleSender.bottomFont {
             self.bottomTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
-            self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+        } else {
+            print("ERROR in Setting Text Font!!")
         }
+        setViewTextDisplays()
     }
     
+    
+    //MARK: Set View Displays
+    func setViewTextDisplays() {
+        self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
+        self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+    }
     //MARK: Unwind back from Color Picker
      @IBAction func unwindToEditStyles(_ sender: UIStoryboardSegue) {
          
@@ -174,19 +190,5 @@ class EditTextStylesViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-   // @IBAction func finishChanges(_ sender: Any) {
-        // Do Stuff!!!
-        
-   //     self.dismiss(animated: true, completion: nil)
-    //}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

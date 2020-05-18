@@ -21,7 +21,7 @@ class ColorPickerViewController: UIViewController {
     var greenValue: CGFloat?
     var blueValue: CGFloat?
     var alphaValue: CGFloat = 1
-    var identifier: String?
+    var identifier: StyleSender?
     
     var unwindToStyleEditorSegueID = "unwindToStyleEditor"
     
@@ -62,9 +62,22 @@ class ColorPickerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.unwindToStyleEditorSegueID {
+            let color = self.colorView.backgroundColor
             let controller = segue.destination as! EditTextStylesViewController
             
-            controller.bottomTextProperties![NSAttributedString.Key.backgroundColor] = self.colorView.backgroundColor
+            if self.identifier == StyleSender.topText {
+                controller.topTextProperties![NSAttributedString.Key.foregroundColor] = color
+            } else if self.identifier == StyleSender.topBorder {
+                controller.topTextProperties![NSAttributedString.Key.strokeColor] = color
+            } else if self.identifier == StyleSender.bottomText {
+                controller.bottomTextProperties![NSAttributedString.Key.foregroundColor] = color
+            } else if self.identifier == StyleSender.bottomBorder {
+                controller.bottomTextProperties![NSAttributedString.Key.strokeColor] = color
+            } else {
+                print("ERROR in Style Enum while Setting Colors")
+            }
+            
+            controller.setViewTextDisplays()
         }
     }
 
