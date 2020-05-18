@@ -23,6 +23,10 @@ class EditTextStylesViewController: UIViewController {
     var changeTopBorderColorSegueID = "changeTopBorderColor"
     var changeBottomTextColorSegueID = "changeBottomTextColor"
     var changeBottomBorderColorSegueID = "changeBottomBorderColor"
+    enum FontSender {
+        case top
+        case bottom
+    }
     
     
     //MARK: viewDidLoad
@@ -91,6 +95,65 @@ class EditTextStylesViewController: UIViewController {
             
         }
     }
+    
+    //MARK: Change font button actions
+    @IBAction func changeTopTextFont(_ sender: Any) {
+        self.presentFontChanger(FontSender.top, text: self.topText!)
+    }
+    
+    @IBAction func changeBottomTextFont(_ sender: Any) {
+        self.presentFontChanger(FontSender.bottom, text: self.bottomText!)
+    }
+    
+    func presentFontChanger(_ id: FontSender, text: String) {
+        // Alert Title
+        let controller = UIAlertController()
+            controller.title = "Choose Font for:"
+            controller.message = text
+        
+        // Alert Fonts
+        let helveticaOption = UIAlertAction(title: "Helvetica Neue", style: UIAlertAction.Style.default) { action in
+            self.setTextFont(id, font: "HelveticaNeue-CondensedBlack")
+        }
+        let courierOption = UIAlertAction(title: "Courier", style: UIAlertAction.Style.default) { action in
+                   self.setTextFont(id, font: "Courier-Bold")
+        }
+        let typewriterOption = UIAlertAction(title: "Typewriter", style: UIAlertAction.Style.default) { action in
+            self.setTextFont(id, font: "AmericanTypewriter-CondensedBold")
+        }
+        let fancyOption = UIAlertAction(title: "Fancy", style: UIAlertAction.Style.default) { action in
+            self.setTextFont(id, font: "SnellRoundhand-Black")
+        }
+        let funOption = UIAlertAction(title: "Fun Font", style: UIAlertAction.Style.default) { action in
+            self.setTextFont(id, font: "PartyLetPlain")
+        }
+        
+        // Alert Cancel
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+        { action in controller.dismiss(animated: true, completion: nil)}
+
+        // Attach Actions
+        controller.addAction(helveticaOption)
+        controller.addAction(courierOption)
+        controller.addAction(typewriterOption)
+        controller.addAction(fancyOption)
+        controller.addAction(funOption)
+        controller.addAction(cancelAction)
+        
+        // Present Alter
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func setTextFont(_ id: FontSender, font: String) {
+        if id == FontSender.top {
+            self.topTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
+            self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
+        } else {
+            self.bottomTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
+            self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+        }
+    }
+    
     
     //MARK: Cancel Button Action
     @IBAction func cancelChanges(_ sender: Any) {

@@ -21,6 +21,7 @@ class ColorPickerViewController: UIViewController {
     var greenValue: CGFloat?
     var blueValue: CGFloat?
     var alphaValue: CGFloat = 1
+    var identifier: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,9 @@ class ColorPickerViewController: UIViewController {
     }
     
     @IBAction func finishedPicker(_ sender: Any) {
-        // Do Stuff!!
+        if let presenter = presentingViewController as? EditTextStylesViewController {
+            presenter.bottomTextProperties![NSAttributedString.Key.strokeColor] = self.colorView.backgroundColor
+        }
         self.dismiss(animated: true, completion: nil)
     }
     

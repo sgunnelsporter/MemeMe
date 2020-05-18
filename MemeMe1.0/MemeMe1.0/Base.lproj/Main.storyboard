@@ -184,7 +184,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="1wI-36-oFI" kind="presentation" id="fm1-bR-YEz"/>
+                                                    <action selector="changeTopTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="LMO-xh-fKz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -238,7 +238,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="1wI-36-oFI" kind="presentation" id="Klz-NC-7Sh"/>
+                                                    <action selector="changeBottomTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="3gW-Iw-xIP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -397,45 +397,6 @@
             </objects>
             <point key="canvasLocation" x="2788.4057971014495" y="-2.0089285714285712"/>
         </scene>
-        <!--Font Picker View Controller-->
-        <scene sceneID="7bB-Ab-lmb">
-            <objects>
-                <viewController id="1wI-36-oFI" customClass="FontPickerViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="erb-P9-wbi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-tR-3E6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <items>
-                                    <navigationItem title="Font Picker" id="ejb-3f-UBw">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Fef-h6-v5T">
-                                            <connections>
-                                                <action selector="cancelPicker:" destination="1wI-36-oFI" id="dlC-aF-zXi"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="BH4-j9-d20">
-                                            <connections>
-                                                <action selector="finishPicker:" destination="1wI-36-oFI" id="meb-th-8LK"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="MtH-tR-3E6" firstAttribute="trailing" secondItem="C7K-uO-a9R" secondAttribute="trailing" id="Shf-uD-Qqw"/>
-                            <constraint firstItem="MtH-tR-3E6" firstAttribute="leading" secondItem="C7K-uO-a9R" secondAttribute="leading" id="pwK-RP-hy5"/>
-                            <constraint firstItem="MtH-tR-3E6" firstAttribute="top" secondItem="C7K-uO-a9R" secondAttribute="top" id="waS-bw-q4U"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="C7K-uO-a9R"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ1-Az-iGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2788" y="659"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="562-kS-wKT">
             <objects>
@@ -456,7 +417,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fm1-bR-YEz"/>
         <segue reference="gjw-rN-Dwm"/>
     </inferredMetricsTieBreakers>
     <resources>

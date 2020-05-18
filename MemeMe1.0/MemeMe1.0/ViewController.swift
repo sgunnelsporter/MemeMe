@@ -38,16 +38,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Other Properties
     var editTextStylesSegueID = "editStyle"
-    var changeTopTextColorSegueID = "changeTopTextColor"
-    var changeTopBorderColorSegueID = "changeTopBorderColor"
-    var changeBottomTextColorSegueID = "changeBottomTextColor"
-    var changeBottomBorderColorSegueID = "changeBottomBorderColor"
     
     
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        for family: String in UIFont.familyNames
+               {
+                   print(family)
+                   for names: String in UIFont.fontNames(forFamilyName: family)
+                   {
+                       print("== \(names)")
+                   }
+               }
         // Set image view height & width based on screen size
         //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
         self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
