@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    
+        
     //MARK: View state variables
     var activeTextField: UITextField?
 
@@ -23,40 +23,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     //MARK: Default Text attributes
-    let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor.white,
+    var topTextPropertiesDefault: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor(named: "MemeGray")!,
         .strokeColor: UIColor.black,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth:  Float(-3.0)
+        .strokeWidth:  Float(-1.0)
     ]
+    var bottomTextPropertiesDefault: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor(named: "MemeGray")!,
+        .strokeColor: UIColor.black,
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        .strokeWidth:  Float(-1.0)
+    ]
+    var topTextProperties: [NSAttributedString.Key: Any] = [:]
+    var bottomTextProperties: [NSAttributedString.Key: Any] = [:]
+    
+    //MARK: Other Properties
+    var editTextStylesSegueID = "editStyle"
     
     
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         // Set image view height & width based on screen size
         //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
         self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
-        
-        // If an image is not yet selected disable share button
-        if memeImage.image == nil {
-            self.shareButton.isEnabled = false
-        } else {
-            self.shareButton.isEnabled = true
-        }
         
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         // Set textField defaults
         self.topText.delegate = self
-        self.topText.defaultTextAttributes = memeTextAttributes
-        self.topText.textAlignment = .center
-
         self.bottomText.delegate = self
-        self.bottomText.defaultTextAttributes = memeTextAttributes
-        self.bottomText.textAlignment = .center
+        self.setTextDefaults()
+        
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -73,6 +74,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    func setTextDefaults() {
+        self.topTextProperties = self.topTextPropertiesDefault
+        self.bottomTextProperties = self.bottomTextPropertiesDefault
+        setTextStyles()
+    }
+    func setTextStyles() {
+        self.topText.defaultTextAttributes = self.topTextProperties
+        self.topText.textAlignment = .center
+        self.bottomText.defaultTextAttributes = self.bottomTextProperties
+        self.bottomText.textAlignment = .center
     }
 
     // MARK: Image Picking Control
@@ -141,6 +154,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
+    //MARK: Edit Text Styles Control
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == self.editTextStylesSegueID {
+            
+            let controller = segue.destination as! EditTextStylesViewController
+            controller.topText = self.topText.text ?? "Error on Top Text"
+            controller.bottomText = self.bottomText.text ?? "Error on Bottom Text"
+            controller.topTextProperties = self.topTextProperties
+            controller.bottomTextProperties = self.bottomTextProperties
+        }
+    }
+    @IBAction func unwindToMain(_ sender: UIStoryboardSegue) {
+        
+    }
+    
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
@@ -165,8 +194,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func resetMeme(_ sender: Any) {
         self.bottomText.text = "BOTTOM TEXT"
         self.topText.text = "TOP TEXT"
+        self.setTextDefaults()
         self.setImage(image: UIImage(named: "DefaultImage"))
-        self.shareButton.isEnabled = false
     }
     
     

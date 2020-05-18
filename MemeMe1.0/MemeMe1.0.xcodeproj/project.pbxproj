@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */; };
+		26E7EA6D24708C98003D11A9 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */; };
+		26E7EA752472F7D1003D11A9 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA712472F7D1003D11A9 /* Raleway-ExtraBold.ttf */; };
+		26E7EA762472F7D1003D11A9 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA722472F7D1003D11A9 /* DancingScript-Bold.ttf */; };
+		26E7EA772472F7D1003D11A9 /* Coiny-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA732472F7D1003D11A9 /* Coiny-Regular.ttf */; };
+		26E7EA782472F7D1003D11A9 /* MomsType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA742472F7D1003D11A9 /* MomsType.ttf */; };
+		26E7EA7A2472F876003D11A9 /* VesperLibre-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA792472F876003D11A9 /* VesperLibre-Black.ttf */; };
 		26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB2E2454C19C007D05EC /* AppDelegate.swift */; };
 		26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB302454C19C007D05EC /* SceneDelegate.swift */; };
 		26F7BB332454C19C007D05EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7BB322454C19C007D05EC /* ViewController.swift */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextStylesViewController.swift; sourceTree = "<group>"; };
+		26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		26E7EA712472F7D1003D11A9 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraBold.ttf"; path = "../../../Assets/fonts for text/Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		26E7EA722472F7D1003D11A9 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Bold.ttf"; path = "../../../Assets/fonts for text/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		26E7EA732472F7D1003D11A9 /* Coiny-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Coiny-Regular.ttf"; path = "../../../Assets/fonts for text/Coiny-Regular.ttf"; sourceTree = "<group>"; };
+		26E7EA742472F7D1003D11A9 /* MomsType.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MomsType.ttf; path = "../../../Assets/fonts for text/MomsType.ttf"; sourceTree = "<group>"; };
+		26E7EA792472F876003D11A9 /* VesperLibre-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "VesperLibre-Black.ttf"; path = "../../../Assets/fonts for text/VesperLibre-Black.ttf"; sourceTree = "<group>"; };
 		26F7BB2B2454C19B007D05EC /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F7BB2E2454C19C007D05EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F7BB302454C19C007D05EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +51,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26E7EA702472F3E3003D11A9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				26E7EA732472F7D1003D11A9 /* Coiny-Regular.ttf */,
+				26E7EA722472F7D1003D11A9 /* DancingScript-Bold.ttf */,
+				26E7EA742472F7D1003D11A9 /* MomsType.ttf */,
+				26E7EA792472F876003D11A9 /* VesperLibre-Black.ttf */,
+				26E7EA712472F7D1003D11A9 /* Raleway-ExtraBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		26F7BB222454C19B007D05EC = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +85,13 @@
 				26F7BB2E2454C19C007D05EC /* AppDelegate.swift */,
 				26F7BB302454C19C007D05EC /* SceneDelegate.swift */,
 				26F7BB322454C19C007D05EC /* ViewController.swift */,
+				26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */,
+				26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */,
 				26F7BB342454C19C007D05EC /* Main.storyboard */,
 				26F7BB372454C1A0007D05EC /* Assets.xcassets */,
 				26F7BB392454C1A0007D05EC /* LaunchScreen.storyboard */,
 				26F7BB3C2454C1A0007D05EC /* Info.plist */,
+				26E7EA702472F3E3003D11A9 /* Fonts */,
 			);
 			path = MemeMe1.0;
 			sourceTree = "<group>";
@@ -125,9 +154,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E7EA772472F7D1003D11A9 /* Coiny-Regular.ttf in Resources */,
+				26E7EA752472F7D1003D11A9 /* Raleway-ExtraBold.ttf in Resources */,
 				26F7BB3B2454C1A0007D05EC /* LaunchScreen.storyboard in Resources */,
 				26F7BB382454C1A0007D05EC /* Assets.xcassets in Resources */,
+				26E7EA782472F7D1003D11A9 /* MomsType.ttf in Resources */,
 				26F7BB362454C19C007D05EC /* Main.storyboard in Resources */,
+				26E7EA7A2472F876003D11A9 /* VesperLibre-Black.ttf in Resources */,
+				26E7EA762472F7D1003D11A9 /* DancingScript-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E7EA6D24708C98003D11A9 /* ColorPickerViewController.swift in Sources */,
 				26F7BB332454C19C007D05EC /* ViewController.swift in Sources */,
 				26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */,
 				26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */,
+				26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
