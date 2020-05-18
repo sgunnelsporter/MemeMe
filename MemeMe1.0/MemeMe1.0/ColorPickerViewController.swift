@@ -23,6 +23,8 @@ class ColorPickerViewController: UIViewController {
     var alphaValue: CGFloat = 1
     var identifier: String?
     
+    var unwindToStyleEditorSegueID = "unwindToStyleEditor"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,11 +60,12 @@ class ColorPickerViewController: UIViewController {
         colorView.backgroundColor = UIColor(red: self.redValue!, green: self.greenValue!, blue: self.blueValue!, alpha: self.alphaValue)
     }
     
-    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == self.unwindToStyleEditorSegueID {
+            let controller = segue.destination as! EditTextStylesViewController
+            
+            controller.bottomTextProperties![NSAttributedString.Key.backgroundColor] = self.colorView.backgroundColor
+        }
     }
-    */
 
 }

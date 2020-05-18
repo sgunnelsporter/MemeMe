@@ -133,7 +133,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="9ZH-a1-R7f">
                                             <connections>
-                                                <action selector="finishChanges:" destination="Egk-QC-jgV" id="do8-F0-sz1"/>
+                                                <segue destination="Qml-v5-k4x" kind="unwind" identifier="setNewTextProperties" unwindAction="unwindToMain:" id="BFR-gl-KxO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -272,6 +272,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwM-l2-CfD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Qml-v5-k4x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="137.94642857142856"/>
         </scene>
@@ -295,6 +296,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LQv-Sv-eMA">
                                             <connections>
                                                 <action selector="finishedPicker:" destination="j57-fy-Jag" id="Gwr-Td-kub"/>
+                                                <segue destination="FgW-ja-r3i" kind="unwind" identifier="unwindToStyleEditor" unwindAction="unwindToEditStyles:" id="nxF-yF-t6T"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -394,6 +396,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dd-Re-f07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="FgW-ja-r3i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2788.4057971014495" y="-2.0089285714285712"/>
         </scene>

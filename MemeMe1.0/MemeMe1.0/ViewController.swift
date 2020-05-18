@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    
+        
     //MARK: View state variables
     var activeTextField: UITextField?
 
@@ -43,15 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        for family: String in UIFont.familyNames
-               {
-                   print(family)
-                   for names: String in UIFont.fontNames(forFamilyName: family)
-                   {
-                       print("== \(names)")
-                   }
-               }
+    
         // Set image view height & width based on screen size
         //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
         self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
@@ -63,7 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.topText.delegate = self
         self.topText.defaultTextAttributes = self.topTextProperties
         self.topText.textAlignment = .center
-
+        
         self.bottomText.delegate = self
         self.bottomText.defaultTextAttributes = self.bottomTextProperties
         self.bottomText.textAlignment = .center
@@ -162,6 +154,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             controller.topTextProperties = self.topTextProperties
             controller.bottomTextProperties = self.bottomTextProperties
         }
+    }
+    @IBAction func unwindToMain(_ sender: UIStoryboardSegue) {
+        
     }
     
     //MARK: Share Meme Control

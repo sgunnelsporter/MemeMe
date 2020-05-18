@@ -23,6 +23,7 @@ class EditTextStylesViewController: UIViewController {
     var changeTopBorderColorSegueID = "changeTopBorderColor"
     var changeBottomTextColorSegueID = "changeBottomTextColor"
     var changeBottomBorderColorSegueID = "changeBottomBorderColor"
+    var setChangesBackToMainSegueID = "setNewTextProperties"
     enum FontSender {
         case top
         case bottom
@@ -94,6 +95,15 @@ class EditTextStylesViewController: UIViewController {
             controller.blueValue = ciColor.blue
             
         }
+        
+        if segue.identifier == self.setChangesBackToMainSegueID {
+            let controller = segue.destination as! ViewController
+            
+            controller.topTextProperties = self.topTextProperties!
+            controller.bottomTextProperties = self.bottomTextProperties!
+            controller.topText.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
+            controller.bottomText.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
+        }
     }
     
     //MARK: Change font button actions
@@ -154,16 +164,21 @@ class EditTextStylesViewController: UIViewController {
         }
     }
     
+    //MARK: Unwind back from Color Picker
+     @IBAction func unwindToEditStyles(_ sender: UIStoryboardSegue) {
+         
+     }
     
     //MARK: Cancel Button Action
     @IBAction func cancelChanges(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func finishChanges(_ sender: Any) {
+   // @IBAction func finishChanges(_ sender: Any) {
         // Do Stuff!!!
-        self.dismiss(animated: true, completion: nil)
-    }
+        
+   //     self.dismiss(animated: true, completion: nil)
+    //}
     /*
     // MARK: - Navigation
 
