@@ -164,7 +164,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="j57-fy-Jag" kind="presentation" id="gjw-rN-Dwm"/>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" identifier="changeTopTextColor" id="gjw-rN-Dwm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-IK-vn7">
@@ -174,7 +174,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="j57-fy-Jag" kind="presentation" id="WVv-e0-6pO"/>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" identifier="changeTopBorderColor" id="WVv-e0-6pO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-pi-Gbh">
@@ -218,7 +218,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="j57-fy-Jag" kind="presentation" id="Mk6-CF-m6X"/>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" identifier="changeBottomTextColor" id="Mk6-CF-m6X"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-Sl-r6a">
@@ -228,7 +228,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="j57-fy-Jag" kind="presentation" id="dJx-NM-YST"/>
+                                                    <segue destination="j57-fy-Jag" kind="presentation" identifier="changeBottomBorderColor" id="dJx-NM-YST"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-hY-X25">
@@ -308,13 +308,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="299" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFv-Q8-wMs">
-                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RXZ-Xk-psw">
-                                                <rect key="frame" x="48.5" y="0.0" width="252.5" height="30"/>
+                                                <rect key="frame" x="36" y="0.0" width="265" height="30"/>
                                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="chageColor" destination="j57-fy-Jag" eventType="valueChanged" id="jhO-aR-ZlI"/>
@@ -326,13 +326,13 @@
                                         <rect key="frame" x="0.0" y="82" width="299" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYR-Af-cbF">
-                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T3v-xP-IUV">
-                                                <rect key="frame" x="48.5" y="0.0" width="252.5" height="30"/>
+                                                <rect key="frame" x="36" y="0.0" width="265" height="30"/>
                                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="chageColor" destination="j57-fy-Jag" eventType="valueChanged" id="5K4-je-s5g"/>
@@ -344,13 +344,13 @@
                                         <rect key="frame" x="0.0" y="164" width="299" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ej-yn-p46">
-                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-Mw-8LN">
-                                                <rect key="frame" x="48.5" y="0.0" width="252.5" height="30"/>
+                                                <rect key="frame" x="36" y="0.0" width="265" height="30"/>
                                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="chageColor" destination="j57-fy-Jag" eventType="valueChanged" id="pY7-de-OIk"/>
@@ -457,7 +457,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fm1-bR-YEz"/>
-        <segue reference="WVv-e0-6pO"/>
+        <segue reference="gjw-rN-Dwm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DefaultImage" width="1813" height="3022"/>

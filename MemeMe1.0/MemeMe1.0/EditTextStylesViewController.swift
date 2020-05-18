@@ -18,6 +18,13 @@ class EditTextStylesViewController: UIViewController {
     @IBOutlet weak var topTextDisplay: UILabel!
     @IBOutlet weak var bottomTextDisplay: UILabel!
     
+    //MARK: Other Properties
+    var changeTopTextColorSegueID = "changeTopTextColor"
+    var changeTopBorderColorSegueID = "changeTopBorderColor"
+    var changeBottomTextColorSegueID = "changeBottomTextColor"
+    var changeBottomBorderColorSegueID = "changeBottomBorderColor"
+    
+    
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,62 @@ class EditTextStylesViewController: UIViewController {
         self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
 
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: prepare for Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == self.changeTopTextColorSegueID {
+            
+            let controller = segue.destination as! ColorPickerViewController
+            let textColor = self.topTextProperties![NSAttributedString.Key.foregroundColor] as! UIColor
+            
+            let ciColor = CIColor(color: textColor)
+            controller.alphaValue = ciColor.alpha
+            controller.redValue = ciColor.red
+            controller.greenValue = ciColor.green
+            controller.blueValue = ciColor.blue
+            
+        }
+        
+        if segue.identifier == self.changeTopBorderColorSegueID {
+            
+            let controller = segue.destination as! ColorPickerViewController
+            let borderColor = self.topTextProperties![NSAttributedString.Key.strokeColor] as! UIColor
+            
+            let ciColor = CIColor(color: borderColor)
+            controller.alphaValue = ciColor.alpha
+            controller.redValue = ciColor.red
+            controller.greenValue = ciColor.green
+            controller.blueValue = ciColor.blue
+            
+        }
+        
+        if segue.identifier == self.changeBottomTextColorSegueID {
+            
+            let controller = segue.destination as! ColorPickerViewController
+            let textColor = self.bottomTextProperties![NSAttributedString.Key.foregroundColor] as! UIColor
+            
+            let ciColor = CIColor(color: textColor)
+            controller.alphaValue = ciColor.alpha
+            controller.redValue = ciColor.red
+            controller.greenValue = ciColor.green
+            controller.blueValue = ciColor.blue
+            
+        }
+        
+        if segue.identifier == self.changeBottomBorderColorSegueID {
+            
+            let controller = segue.destination as! ColorPickerViewController
+            let borderColor = self.bottomTextProperties![NSAttributedString.Key.strokeColor] as! UIColor
+            
+            let ciColor = CIColor(color: borderColor)
+            controller.alphaValue = ciColor.alpha
+            controller.redValue = ciColor.red
+            controller.greenValue = ciColor.green
+            controller.blueValue = ciColor.blue
+            
+        }
     }
     
     //MARK: Cancel Button Action

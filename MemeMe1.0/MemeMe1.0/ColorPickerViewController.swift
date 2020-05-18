@@ -16,11 +16,19 @@ class ColorPickerViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    // MARK: Properties
+    var redValue: CGFloat?
+    var greenValue: CGFloat?
+    var blueValue: CGFloat?
+    var alphaValue: CGFloat = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.redSlider.value = Float(self.redValue ?? 0)
+        self.greenSlider.value = Float(self.greenValue ?? 0)
+        self.blueSlider.value = Float(self.blueValue ?? 0)
+        self.chageColor()
     }
     
     
@@ -40,11 +48,11 @@ class ColorPickerViewController: UIViewController {
             return
         }
         
-        let r : CGFloat = CGFloat(self.redSlider.value)
-        let g : CGFloat = CGFloat(self.greenSlider.value)
-        let b : CGFloat = CGFloat(self.blueSlider.value)
+        self.redValue = CGFloat(self.redSlider.value)
+        self.greenValue = CGFloat(self.greenSlider.value)
+        self.blueValue = CGFloat(self.blueSlider.value)
         
-        colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        colorView.backgroundColor = UIColor(red: self.redValue!, green: self.greenValue!, blue: self.blueValue!, alpha: self.alphaValue)
     }
     
     /*

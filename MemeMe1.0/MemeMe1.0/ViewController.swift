@@ -24,20 +24,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Default Text attributes
     var topTextProperties: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor.white,
-        .strokeColor: UIColor.black,
+        .foregroundColor: UIColor(named: "MemePink")!,
+        .strokeColor: UIColor(named: "MemeGray")!,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth:  Float(-3.0)
+        .strokeWidth:  Float(-1.0)
     ]
     var bottomTextProperties: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor.white,
-        .strokeColor: UIColor.black,
+        .foregroundColor: UIColor(named: "MemeWhite")!,
+        .strokeColor: UIColor(named: "MemeGreen")!,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth:  Float(-3.0)
+        .strokeWidth:  Float(-1.0)
     ]
     
     //MARK: Other Properties
     var editTextStylesSegueID = "editStyle"
+    var changeTopTextColorSegueID = "changeTopTextColor"
+    var changeTopBorderColorSegueID = "changeTopBorderColor"
+    var changeBottomTextColorSegueID = "changeBottomTextColor"
+    var changeBottomBorderColorSegueID = "changeBottomBorderColor"
     
     
     //MARK: Set-up and Release of ViewController
