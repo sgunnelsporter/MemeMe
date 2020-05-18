@@ -23,18 +23,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     //MARK: Default Text attributes
-    var topTextProperties: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor(named: "MemePink")!,
-        .strokeColor: UIColor(named: "MemeGray")!,
+    var topTextPropertiesDefault: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor(named: "MemeGray")!,
+        .strokeColor: UIColor.black,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         .strokeWidth:  Float(-1.0)
     ]
-    var bottomTextProperties: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor(named: "MemeWhite")!,
-        .strokeColor: UIColor(named: "MemeGreen")!,
+    var bottomTextPropertiesDefault: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor(named: "MemeGray")!,
+        .strokeColor: UIColor.black,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         .strokeWidth:  Float(-1.0)
     ]
+    var topTextProperties: [NSAttributedString.Key: Any] = [:]
+    var bottomTextProperties: [NSAttributedString.Key: Any] = [:]
     
     //MARK: Other Properties
     var editTextStylesSegueID = "editStyle"
@@ -54,7 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Set textField defaults
         self.topText.delegate = self
         self.bottomText.delegate = self
-        self.setTextStyles()
+        self.setTextDefaults()
         
         
         // Set-up notification listening for keyboard actions
@@ -74,6 +76,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
+    func setTextDefaults() {
+        self.topTextProperties = self.topTextPropertiesDefault
+        self.bottomTextProperties = self.bottomTextPropertiesDefault
+        setTextStyles()
+    }
     func setTextStyles() {
         self.topText.defaultTextAttributes = self.topTextProperties
         self.topText.textAlignment = .center
@@ -187,6 +194,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func resetMeme(_ sender: Any) {
         self.bottomText.text = "BOTTOM TEXT"
         self.topText.text = "TOP TEXT"
+        self.setTextDefaults()
         self.setImage(image: UIImage(named: "DefaultImage"))
     }
     
