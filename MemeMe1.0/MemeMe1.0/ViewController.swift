@@ -172,10 +172,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
-        //let memeCreater = SharableMeme()
-        //let theMemeImage = memeCreater.makeSharableMeme(topText: self.topText, bottomText: self.bottomText, image: self.memeImage.image!)
+        // set bounds of where meme image is
         let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: self.view.bounds.width, height: self.view.bounds.height)
-
+        // take "screenshot"
         UIGraphicsBeginImageContext(self.memeImage.bounds.size)
         view.drawHierarchy(in: bounds, afterScreenUpdates: true)
         let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -184,6 +183,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            if let popoverController = sharingController.popoverPresentationController {
+              popoverController.barButtonItem = sender as? UIBarButtonItem
+            }
             present(sharingController, animated: true)
         } else {
             print("Error creating Meme Image!")
