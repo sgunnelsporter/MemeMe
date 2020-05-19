@@ -14,7 +14,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var activeTextField: UITextField?
 
     // MARK: View Outlet Defitions
-    @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
@@ -173,9 +172,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
-        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: view.bounds.size.width,height: view.bounds.size.height)
-
-        UIGraphicsBeginImageContext(self.memeImage.frame.size)
+        // set bounds of where meme image is
+        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: self.view.bounds.width, height: self.view.bounds.height)
+        // take "screenshot"
+        UIGraphicsBeginImageContext(self.memeImage.bounds.size)
         view.drawHierarchy(in: bounds, afterScreenUpdates: true)
         let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -183,6 +183,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            if let popoverController = sharingController.popoverPresentationController {
+              popoverController.barButtonItem = sender as? UIBarButtonItem //UIBarButtonItem(image: finalImage, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+            }
             present(sharingController, animated: true)
         } else {
             print("Error creating Meme Image!")
@@ -203,7 +206,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setImage(image: UIImage?) {
         if let image = image {
             self.memeImage.image = image
-            let availableSize = self.innerView.bounds.size
+            let availableSize = self.view.bounds.size
 
             let imageAspectRatio = image.size.width / image.size.height
             let screenAspectRatio = availableSize.width / availableSize.height

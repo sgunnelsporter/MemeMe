@@ -117,14 +117,22 @@ class EditTextStylesViewController: UIViewController {
     
     //MARK: Change font button actions
     @IBAction func changeTopTextFont(_ sender: Any) {
-        self.presentFontChanger(StyleSender.topFont, text: self.topText!)
+        let fontController = self.createFontChangerController(StyleSender.topFont, text: self.topText!)
+        if let popoverController = fontController.popoverPresentationController {
+            popoverController.barButtonItem =  sender as? UIBarButtonItem
+        }
+        self.present(fontController, animated: true, completion: nil)
     }
     
     @IBAction func changeBottomTextFont(_ sender: Any) {
-        self.presentFontChanger(StyleSender.bottomFont, text: self.bottomText!)
+        let fontController = self.createFontChangerController(StyleSender.bottomFont, text: self.bottomText!)
+        if let popoverController = fontController.popoverPresentationController {
+            popoverController.barButtonItem =  sender as? UIBarButtonItem
+        }
+        self.present(fontController, animated: true, completion: nil)
     }
     
-    func presentFontChanger(_ id: StyleSender, text: String) {
+    func createFontChangerController(_ id: StyleSender, text: String) -> UIAlertController {
         // Alert Title
         let controller = UIAlertController()
             controller.title = "Choose Font for:"
@@ -159,8 +167,8 @@ class EditTextStylesViewController: UIViewController {
         controller.addAction(funOption)
         controller.addAction(cancelAction)
         
-        // Present Alter
-        self.present(controller, animated: true, completion: nil)
+        // return Alert
+        return controller
     }
     
     func setTextFont(_ id: StyleSender, font: String) {

@@ -16,50 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="d37-X2-KaO">
-                                <rect key="frame" x="0.0" y="54" width="414" height="618"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
-                                        <rect key="frame" x="57" y="59" width="300" height="500"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" image="YES" adjustable="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="JUJ-IB-SRo"/>
-                                            <constraint firstAttribute="height" constant="500" id="ThX-jB-CfA"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
-                                        <rect key="frame" x="57" y="79" width="300" height="33"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
-                                        </accessibility>
-                                        <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
-                                        <rect key="frame" x="57" y="506" width="300" height="33"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
-                                        </accessibility>
-                                        <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
+                                <rect key="frame" x="57" y="118" width="300" height="500"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" adjustable="YES"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="7Q0-5C-MCv" secondAttribute="leading" id="1sG-Dz-ki6"/>
-                                    <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerY" secondItem="d37-X2-KaO" secondAttribute="centerY" id="LCz-ig-gdE"/>
-                                    <constraint firstItem="mo0-dR-CeX" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="Ptn-7g-wqE"/>
-                                    <constraint firstItem="kxJ-cQ-kc2" firstAttribute="trailing" secondItem="7Q0-5C-MCv" secondAttribute="trailing" id="ZA3-Bf-mY3"/>
-                                    <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="7Q0-5C-MCv" secondAttribute="leading" id="gIp-JS-Qme"/>
-                                    <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerX" secondItem="d37-X2-KaO" secondAttribute="centerX" id="hUr-qY-KsL"/>
-                                    <constraint firstItem="kxJ-cQ-kc2" firstAttribute="top" secondItem="7Q0-5C-MCv" secondAttribute="top" priority="996" constant="20" id="sCa-MJ-HNa"/>
-                                    <constraint firstItem="mo0-dR-CeX" firstAttribute="bottom" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="-20" id="sgx-e8-Di5"/>
+                                    <constraint firstAttribute="width" constant="300" id="JUJ-IB-SRo"/>
+                                    <constraint firstAttribute="height" constant="500" id="ThX-jB-CfA"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
+                                <rect key="frame" x="0.0" y="138" width="414" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
+                                <rect key="frame" x="0.0" y="565" width="414" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.82745098039999998" green="0.33725490200000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-lx-Dg8">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
@@ -81,13 +65,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" secondItem="d37-X2-KaO" secondAttribute="bottom" constant="20" id="C4A-ue-PzJ"/>
-                            <constraint firstItem="d37-X2-KaO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="KgO-sU-Laf"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="bottom" secondItem="mo0-dR-CeX" secondAttribute="bottom" constant="20" id="2Ez-Dm-aPf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kxJ-cQ-kc2" secondAttribute="trailing" id="HAL-So-roF"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ihg-3r-4dl"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="RWo-cb-LPb"/>
+                            <constraint firstItem="kxJ-cQ-kc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TtG-4m-ZZn"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UJg-VB-dUt"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="doe-w9-hr4"/>
-                            <constraint firstItem="d37-X2-KaO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iMw-6Q-0dM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo0-dR-CeX" secondAttribute="trailing" id="nUk-DC-daZ"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sZD-bt-BMG"/>
+                            <constraint firstItem="9gl-lx-Dg8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Q0-5C-MCv" secondAttribute="bottom" constant="20" id="sdr-NH-qtk"/>
                             <constraint firstItem="9gl-lx-Dg8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tG1-lj-8Tp"/>
-                            <constraint firstAttribute="trailing" secondItem="d37-X2-KaO" secondAttribute="trailing" id="zyc-UK-EfZ"/>
+                            <constraint firstItem="mo0-dR-CeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tyB-MD-K1G"/>
+                            <constraint firstItem="7Q0-5C-MCv" firstAttribute="top" secondItem="kxJ-cQ-kc2" secondAttribute="top" constant="-20" id="wTn-GX-6pb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -115,7 +105,6 @@
                         <outlet property="cameraButton" destination="Uw3-n7-Bmr" id="mK9-Ej-ww1"/>
                         <outlet property="imageViewHeightConstraint" destination="ThX-jB-CfA" id="YcS-5x-0Yl"/>
                         <outlet property="imageViewWidthConstraint" destination="JUJ-IB-SRo" id="hXZ-vt-ChA"/>
-                        <outlet property="innerView" destination="d37-X2-KaO" id="QgF-T2-gY4"/>
                         <outlet property="memeImage" destination="7Q0-5C-MCv" id="h9N-HL-p4d"/>
                         <outlet property="shareButton" destination="Sgj-9M-ef0" id="NoU-Nh-YxQ"/>
                         <outlet property="topText" destination="kxJ-cQ-kc2" id="n1D-Tu-zEW"/>
