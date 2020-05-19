@@ -33,7 +33,8 @@ class EditTextStylesViewController: UIViewController {
     var changeBottomTextColorSegueID = "changeBottomTextColor"
     var changeBottomBorderColorSegueID = "changeBottomBorderColor"
     var setChangesBackToMainSegueID = "setNewTextProperties"
-    
+    var changeTopFontSegueID = "changeTopFont"
+    var changeBottomFontSegueID = "changeBottomFont"
     
     //MARK: viewDidLoad
     override func viewDidLoad() {
@@ -181,9 +182,12 @@ class EditTextStylesViewController: UIViewController {
         self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
     }
     //MARK: Unwind back from Color Picker
-     @IBAction func unwindToEditStyles(_ sender: UIStoryboardSegue) {
+     @IBAction func unwindColorToEditStyles(_ sender: UIStoryboardSegue) {
          
      }
+    @IBAction func unwindFontToEditStyles(_ sender: UIStoryboardSegue) {
+        
+    }
     
     //MARK: Cancel Button Action
     @IBAction func cancelChanges(_ sender: Any) {

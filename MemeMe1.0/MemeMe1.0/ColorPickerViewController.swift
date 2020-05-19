@@ -23,7 +23,7 @@ class ColorPickerViewController: UIViewController {
     var alphaValue: CGFloat = 1
     var identifier: StyleSender?
     
-    var unwindToStyleEditorSegueID = "unwindToStyleEditor"
+    var unwindToStyleEditorSegueID = "unwindColorToStyleEditor"
     
     override func viewDidLoad() {
         super.viewDidLoad()

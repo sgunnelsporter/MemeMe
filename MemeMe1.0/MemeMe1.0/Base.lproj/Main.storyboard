@@ -196,6 +196,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="changeTopTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="LMO-xh-fKz"/>
+                                                    <segue destination="8pI-8X-00d" kind="presentation" identifier="changeTopFont" id="KD5-Ez-hWC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -250,6 +251,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="changeBottomTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="3gW-Iw-xIP"/>
+                                                    <segue destination="8pI-8X-00d" kind="presentation" identifier="changeBottomFont" id="iWe-AU-9qE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -287,6 +289,43 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="137.94642857142856"/>
         </scene>
+        <!--Font Picker View Controller-->
+        <scene sceneID="0mM-mc-rGA">
+            <objects>
+                <viewController id="8pI-8X-00d" customClass="FontPickerViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="20s-Dz-LpN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPf-VE-Km2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Font Picker" id="L8k-2n-qA1">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vQr-UW-8HO">
+                                            <connections>
+                                                <action selector="cancelPicker:" destination="j57-fy-Jag" id="8nc-ux-uG0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wut-hA-Ano">
+                                            <connections>
+                                                <action selector="finishedPicker:" destination="j57-fy-Jag" id="Ubr-Ow-3ik"/>
+                                                <segue destination="R0X-1y-m5L" kind="unwind" unwindAction="unwindFontToEditStyles:" id="n54-qx-GZz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="U3Y-q2-4r0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEb-Ok-O5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="R0X-1y-m5L" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="661"/>
+        </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="diN-BY-hLJ">
             <objects>
@@ -307,7 +346,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LQv-Sv-eMA">
                                             <connections>
                                                 <action selector="finishedPicker:" destination="j57-fy-Jag" id="Gwr-Td-kub"/>
-                                                <segue destination="FgW-ja-r3i" kind="unwind" identifier="unwindToStyleEditor" unwindAction="unwindToEditStyles:" id="nxF-yF-t6T"/>
+                                                <segue destination="FgW-ja-r3i" kind="unwind" identifier="unwindColorToStyleEditor" unwindAction="unwindColorToEditStyles:" id="nxF-yF-t6T"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -431,7 +470,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gjw-rN-Dwm"/>
+        <segue reference="dJx-NM-YST"/>
+        <segue reference="iWe-AU-9qE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DefaultImage" width="1813" height="3022"/>
