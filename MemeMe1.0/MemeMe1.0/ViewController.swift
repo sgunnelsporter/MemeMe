@@ -184,7 +184,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let finalImage = theMemeImage {
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
             if let popoverController = sharingController.popoverPresentationController {
-              popoverController.barButtonItem = sender as? UIBarButtonItem
+              popoverController.barButtonItem = sender as? UIBarButtonItem //UIBarButtonItem(image: finalImage, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
             }
             present(sharingController, animated: true)
         } else {
