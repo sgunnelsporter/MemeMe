@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
         // Set image view height & width based on screen size
         //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
-        self.imageViewWidthConstraint.constant = UIScreen.main.bounds.width
+        self.setImage(image: UIImage(named: "DefaultImage"))
         
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
