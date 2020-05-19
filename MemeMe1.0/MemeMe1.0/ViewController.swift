@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var activeTextField: UITextField?
 
     // MARK: View Outlet Defitions
+    @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
@@ -45,19 +46,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Set-up and Release of ViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        // Set image view height & width based on screen size
-        //self.imageViewHeightConstraint.constant = UIScreen.main.bounds.height - toolBar.intrinsicContentSize.height - navigationBar.intrinsicContentSize.height
-        self.setImage(image: UIImage(named: "DefaultImage"))
         
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
-        // Set textField defaults
+        // Set defaults
         self.topText.delegate = self
         self.bottomText.delegate = self
-        self.setTextDefaults()
-        
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -65,6 +60,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Set-up notification listening for orientation changes
         NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setTextDefaults()
+        self.setImage(image: UIImage(named: "DefaultImage"))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -203,17 +203,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setImage(image: UIImage?) {
         if let image = image {
             self.memeImage.image = image
-            let screenSize = UIScreen.main.bounds.size
+            let availableSize = self.innerView.bounds.size
 
             let imageAspectRatio = image.size.width / image.size.height
-            let screenAspectRatio = screenSize.width / screenSize.height
+            let screenAspectRatio = availableSize.width / availableSize.height
 
             if imageAspectRatio > screenAspectRatio {
-                self.imageViewWidthConstraint.constant = min(image.size.width, screenSize.width)
+                self.imageViewWidthConstraint.constant = min(image.size.width, availableSize.width)
                 self.imageViewHeightConstraint.constant = self.imageViewWidthConstraint.constant / imageAspectRatio
             }
             else {
-                self.imageViewHeightConstraint.constant = min(image.size.height, screenSize.height)
+                self.imageViewHeightConstraint.constant = min(image.size.height, availableSize.height)
                 self.imageViewWidthConstraint.constant = self.imageViewHeightConstraint.constant * imageAspectRatio
             }
             view.layoutIfNeeded()
