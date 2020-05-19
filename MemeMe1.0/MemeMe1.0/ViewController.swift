@@ -14,7 +14,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var activeTextField: UITextField?
 
     // MARK: View Outlet Defitions
-    @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
@@ -173,9 +172,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Share Meme Control
     @IBAction func shareMeme(_ sender: Any) {
         // Capture Meme
-        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: view.bounds.size.width,height: view.bounds.size.height)
+        //let memeCreater = SharableMeme()
+        //let theMemeImage = memeCreater.makeSharableMeme(topText: self.topText, bottomText: self.bottomText, image: self.memeImage.image!)
+        let bounds = CGRect(x: -self.memeImage.frame.minX,y: -self.memeImage.frame.minY,width: self.view.bounds.width, height: self.view.bounds.height)
 
-        UIGraphicsBeginImageContext(self.memeImage.frame.size)
+        UIGraphicsBeginImageContext(self.memeImage.bounds.size)
         view.drawHierarchy(in: bounds, afterScreenUpdates: true)
         let theMemeImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -203,7 +204,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setImage(image: UIImage?) {
         if let image = image {
             self.memeImage.image = image
-            let availableSize = self.innerView.bounds.size
+            let availableSize = self.view.bounds.size
 
             let imageAspectRatio = image.size.width / image.size.height
             let screenAspectRatio = availableSize.width / availableSize.height
