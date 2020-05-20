@@ -8,7 +8,18 @@
 
 import UIKit
 
-class FontPickerViewController: UIViewController {
+class FontPickerViewController: UIViewController  {
+    
+    //MARK: BUttons
+    @IBOutlet weak var typewriterFont: UIButton!
+    @IBOutlet weak var dusterFont: UIButton!
+    @IBOutlet weak var coinyFont: UIButton!
+    @IBOutlet weak var dancingFont: UIButton!
+    @IBOutlet weak var momFont: UIButton!
+    @IBOutlet weak var papyrusFont: UIButton!
+    @IBOutlet weak var ralewayFont: UIButton!
+    @IBOutlet weak var snellFont: UIButton!
+    @IBOutlet weak var vesperFont: UIButton!
     
     //MARK: Properties
     var unwindFontToEditStylesSegueID = "unwindFontToEditStyles"
@@ -16,7 +27,6 @@ class FontPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func cancelFontChoice(_ sender: Any) {

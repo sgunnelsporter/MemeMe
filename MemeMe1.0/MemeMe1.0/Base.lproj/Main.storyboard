@@ -426,20 +426,170 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-1V-rK6">
+                                <rect key="frame" x="0.0" y="56" width="414" height="533.33333333333337"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Api-Z2-ImJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40.666666666666664"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="American Typewriter">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="AmericanTypewriter-CondensedBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-Xy-DtO">
+                                        <rect key="frame" x="0.0" y="52.666666666666671" width="414" height="42.333333333333329"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Chalkduster">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Chalkduster"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOQ-Wq-xL5">
+                                        <rect key="frame" x="0.0" y="107" width="414" height="36"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Coiny">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Coiny-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-BG-3nn">
+                                        <rect key="frame" x="0.0" y="155" width="414" height="36"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Courier">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Courier-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEN-jq-bq9">
+                                        <rect key="frame" x="0.0" y="203" width="414" height="40.666666666666657"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Dancing Script">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="DancingScript-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq2-DC-rqs">
+                                        <rect key="frame" x="0.0" y="255.66666666666666" width="414" height="40.666666666666657"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Mom's Typewriter">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="MomsTypewriter"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3e-gK-Yhq">
+                                        <rect key="frame" x="0.0" y="308.33333333333331" width="414" height="49"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Papyrus">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Papyrus"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeb-Za-77w">
+                                        <rect key="frame" x="0.0" y="369.33333333333331" width="414" height="40.333333333333314"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Raleway">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Raleway-ExtraBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-Ns-jB3">
+                                        <rect key="frame" x="0.0" y="421.66666666666669" width="414" height="42.333333333333314"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Snell Roundhand">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="SnellRoundhand-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-6b-R5S">
+                                        <rect key="frame" x="0.0" y="476" width="414" height="57.333333333333371"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Vesper Libre">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="VesperLibre-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="MFz-cu-ox7" firstAttribute="top" secondItem="5q5-Ib-uyU" secondAttribute="top" id="Ax0-Vu-wvp"/>
                             <constraint firstItem="MFz-cu-ox7" firstAttribute="leading" secondItem="5q5-Ib-uyU" secondAttribute="leading" id="Wdf-Ed-xmN"/>
+                            <constraint firstItem="5q5-Ib-uyU" firstAttribute="trailing" secondItem="dDY-1V-rK6" secondAttribute="trailing" id="Zos-lU-IJb"/>
                             <constraint firstItem="MFz-cu-ox7" firstAttribute="trailing" secondItem="5q5-Ib-uyU" secondAttribute="trailing" id="fjC-KQ-WJO"/>
+                            <constraint firstItem="dDY-1V-rK6" firstAttribute="top" secondItem="MFz-cu-ox7" secondAttribute="bottom" id="fpf-Os-za4"/>
+                            <constraint firstItem="dDY-1V-rK6" firstAttribute="centerX" secondItem="hoB-Bq-5vY" secondAttribute="centerX" id="uw7-Ef-kfI"/>
+                            <constraint firstItem="dDY-1V-rK6" firstAttribute="leading" secondItem="5q5-Ib-uyU" secondAttribute="leading" id="zno-v2-bwC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5q5-Ib-uyU"/>
                     </view>
+                    <connections>
+                        <outlet property="coinyFont" destination="lOQ-Wq-xL5" id="uRf-6x-JK0"/>
+                        <outlet property="dancingFont" destination="cEN-jq-bq9" id="MoC-MX-35I"/>
+                        <outlet property="dusterFont" destination="QAV-Xy-DtO" id="HV9-r6-rJa"/>
+                        <outlet property="momFont" destination="bq2-DC-rqs" id="qID-70-9zP"/>
+                        <outlet property="papyrusFont" destination="R3e-gK-Yhq" id="IFo-tQ-JHu"/>
+                        <outlet property="ralewayFont" destination="Zeb-Za-77w" id="08B-an-IuD"/>
+                        <outlet property="snellFont" destination="xuf-Ns-jB3" id="188-WN-wdr"/>
+                        <outlet property="typewriterFont" destination="Api-Z2-ImJ" id="WPp-80-aAt"/>
+                        <outlet property="vesperFont" destination="OH1-6b-R5S" id="MMs-Bd-VZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hs-ap-bwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5ev-po-yjB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2788" y="685"/>
+            <point key="canvasLocation" x="2786.9565217391305" y="684.78260869565224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="562-kS-wKT">
