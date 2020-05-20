@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM1-Dq-sHX">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,7 +184,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeTopTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="LMO-xh-fKz"/>
+                                                    <segue destination="rll-Sl-8jI" kind="presentation" id="oMb-6z-rh8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -238,7 +238,7 @@
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeBottomTextFont:" destination="Egk-QC-jgV" eventType="touchUpInside" id="3gW-Iw-xIP"/>
+                                                    <segue destination="rll-Sl-8jI" kind="presentation" id="Lto-cF-sFX"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -296,7 +296,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LQv-Sv-eMA">
                                             <connections>
                                                 <action selector="finishedPicker:" destination="j57-fy-Jag" id="Gwr-Td-kub"/>
-                                                <segue destination="FgW-ja-r3i" kind="unwind" identifier="unwindToStyleEditor" unwindAction="unwindToEditStyles:" id="nxF-yF-t6T"/>
+                                                <segue destination="FgW-ja-r3i" kind="unwind" identifier="unwindColorToStyleEditor" unwindAction="unwindColorToEditStyles:" id="nxF-yF-t6T"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -400,6 +400,47 @@
             </objects>
             <point key="canvasLocation" x="2788.4057971014495" y="-2.0089285714285712"/>
         </scene>
+        <!--Font Picker View Controller-->
+        <scene sceneID="5KK-8H-uc8">
+            <objects>
+                <viewController id="rll-Sl-8jI" customClass="FontPickerViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoB-Bq-5vY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFz-cu-ox7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Font Picker" id="xjJ-fa-pqk">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7HD-Pq-XE1">
+                                            <connections>
+                                                <action selector="cancelFontChoice:" destination="rll-Sl-8jI" id="Ts7-IL-fq0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vrK-Ea-7d3">
+                                            <connections>
+                                                <action selector="finishedPicker:" destination="j57-fy-Jag" id="113-T0-YY1"/>
+                                                <segue destination="5ev-po-yjB" kind="unwind" identifier="unwindFontToEditStyles" unwindAction="unwindFontToEditStyles:" id="ive-k8-qct"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MFz-cu-ox7" firstAttribute="top" secondItem="5q5-Ib-uyU" secondAttribute="top" id="Ax0-Vu-wvp"/>
+                            <constraint firstItem="MFz-cu-ox7" firstAttribute="leading" secondItem="5q5-Ib-uyU" secondAttribute="leading" id="Wdf-Ed-xmN"/>
+                            <constraint firstItem="MFz-cu-ox7" firstAttribute="trailing" secondItem="5q5-Ib-uyU" secondAttribute="trailing" id="fjC-KQ-WJO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5q5-Ib-uyU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hs-ap-bwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5ev-po-yjB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="685"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="562-kS-wKT">
             <objects>
@@ -420,6 +461,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="oMb-6z-rh8"/>
         <segue reference="gjw-rN-Dwm"/>
     </inferredMetricsTieBreakers>
     <resources>
