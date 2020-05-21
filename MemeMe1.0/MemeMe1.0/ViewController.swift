@@ -27,13 +27,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         .foregroundColor: UIColor(named: "MemeGray")!,
         .strokeColor: UIColor(named: "MemePink")!,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth:  Float(-1.0)
+        .strokeWidth:  Float(-3.0)
     ]
     var bottomTextPropertiesDefault: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor(named: "MemeGray")!,
         .strokeColor: UIColor(named: "MemePink")!,
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth:  Float(-1.0)
+        .strokeWidth:  Float(-3.0)
     ]
     var topTextProperties: [NSAttributedString.Key: Any] = [:]
     var bottomTextProperties: [NSAttributedString.Key: Any] = [:]
