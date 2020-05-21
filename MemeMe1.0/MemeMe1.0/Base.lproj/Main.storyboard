@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZY-WR-5Dj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Edit Text Styles" id="HH1-yn-IS1">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HGZ-1L-Knc">
@@ -140,25 +140,25 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-fP-l9l">
-                                <rect key="frame" x="20" y="89" width="374" height="538"/>
+                                <rect key="frame" x="20" y="80" width="374" height="547"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-Ib-w5R">
-                                        <rect key="frame" x="172.33333333333334" y="0.0" width="29.666666666666657" height="42.666666666666664"/>
+                                        <rect key="frame" x="172.33333333333334" y="0.0" width="29.666666666666657" height="44"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11l-0u-83L">
-                                        <rect key="frame" x="147" y="82.666666666666657" width="80.333333333333314" height="42.333333333333343"/>
+                                        <rect key="frame" x="147" y="84" width="80.333333333333314" height="43.666666666666657"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AQ9-Qc-MoF">
-                                        <rect key="frame" x="46" y="165" width="282" height="42.666666666666657"/>
+                                        <rect key="frame" x="46" y="167.66666666666666" width="282" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEf-lD-aGe">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="42.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                                 <color key="backgroundColor" name="MemePink"/>
                                                 <state key="normal" title="Text Color">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,7 +168,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-IK-vn7">
-                                                <rect key="frame" x="100" y="0.0" width="88" height="42.666666666666664"/>
+                                                <rect key="frame" x="100" y="0.0" width="88" height="44"/>
                                                 <color key="backgroundColor" name="MemeGray"/>
                                                 <state key="normal" title="Border Color">
                                                     <color key="titleColor" name="MemeWhite"/>
@@ -178,13 +178,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-pi-Gbh">
-                                                <rect key="frame" x="218" y="0.0" width="64" height="42.666666666666664"/>
+                                                <rect key="frame" x="218" y="0.0" width="64" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Text Font">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="rll-Sl-8jI" kind="presentation" id="oMb-6z-rh8"/>
+                                                    <segue destination="rll-Sl-8jI" kind="presentation" identifier="changeTopTextFont" id="oMb-6z-rh8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -194,25 +194,25 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="1fv-lg-q8g">
-                                        <rect key="frame" x="0.0" y="247.66666666666666" width="374" height="42.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="251.66666666666666" width="374" height="43.666666666666657"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-OG-miH">
-                                        <rect key="frame" x="157.66666666666666" y="330.33333333333331" width="59" height="42.666666666666686"/>
+                                        <rect key="frame" x="157.66666666666666" y="335.33333333333331" width="59" height="44"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APl-Rc-DiE">
-                                        <rect key="frame" x="147" y="413" width="80.333333333333314" height="42.333333333333314"/>
+                                        <rect key="frame" x="147" y="419.33333333333331" width="80.333333333333314" height="43.666666666666686"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J5x-SN-ebD">
-                                        <rect key="frame" x="46" y="495.33333333333343" width="282" height="42.666666666666686"/>
+                                        <rect key="frame" x="46" y="503" width="282" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-K1-mwV">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="42.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                                 <color key="backgroundColor" name="MemePink"/>
                                                 <state key="normal" title="Text Color">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,7 +222,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-Sl-r6a">
-                                                <rect key="frame" x="100" y="0.0" width="88" height="42.666666666666664"/>
+                                                <rect key="frame" x="100" y="0.0" width="88" height="44"/>
                                                 <color key="backgroundColor" name="MemeGray"/>
                                                 <state key="normal" title="Border Color">
                                                     <color key="titleColor" name="MemeWhite"/>
@@ -232,13 +232,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-hY-X25">
-                                                <rect key="frame" x="218" y="0.0" width="64" height="42.666666666666664"/>
+                                                <rect key="frame" x="218" y="0.0" width="64" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Text Font">
                                                     <color key="titleColor" name="MemeWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="rll-Sl-8jI" kind="presentation" id="Lto-cF-sFX"/>
+                                                    <segue destination="rll-Sl-8jI" kind="presentation" identifier="changeBottomTextFont" id="Lto-cF-sFX"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -255,7 +255,7 @@
                             <constraint firstItem="QBA-77-1ns" firstAttribute="trailing" secondItem="kbd-fP-l9l" secondAttribute="trailing" constant="20" id="0rZ-hD-Sn4"/>
                             <constraint firstItem="kbd-fP-l9l" firstAttribute="centerY" secondItem="iah-ab-25m" secondAttribute="centerY" priority="997" id="A3I-cE-XdJ"/>
                             <constraint firstItem="LZY-WR-5Dj" firstAttribute="leading" secondItem="QBA-77-1ns" secondAttribute="leading" id="Asj-Lw-ABA"/>
-                            <constraint firstItem="kbd-fP-l9l" firstAttribute="top" secondItem="LZY-WR-5Dj" secondAttribute="bottom" constant="40" id="K2m-TA-2iP"/>
+                            <constraint firstItem="kbd-fP-l9l" firstAttribute="top" secondItem="QBA-77-1ns" secondAttribute="top" constant="80" id="K2m-TA-2iP"/>
                             <constraint firstItem="kbd-fP-l9l" firstAttribute="centerX" secondItem="iah-ab-25m" secondAttribute="centerX" id="XaQ-px-KfU"/>
                             <constraint firstItem="LZY-WR-5Dj" firstAttribute="top" secondItem="QBA-77-1ns" secondAttribute="top" id="cQN-Bi-9Tl"/>
                             <constraint firstItem="LZY-WR-5Dj" firstAttribute="trailing" secondItem="QBA-77-1ns" secondAttribute="trailing" id="hc9-lM-txI"/>
@@ -427,23 +427,42 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-1V-rK6">
-                                <rect key="frame" x="0.0" y="56" width="414" height="533.33333333333337"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="515.66666666666663"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Api-Z2-ImJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40.666666666666664"/>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Api-Z2-ImJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="41.333333333333336"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="American Typewriter">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="AmericanTypewriter-CondensedBold"/>
+                                                        <font key="NSFont" size="24" name="AmericanTypewriter-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="n3c-iu-B2o"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-Xy-DtO">
-                                        <rect key="frame" x="0.0" y="52.666666666666671" width="414" height="42.333333333333329"/>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNI-1x-2jT">
+                                        <rect key="frame" x="0.0" y="53.333333333333329" width="414" height="42"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Bradley Hand">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="BradleyHandITCTT-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="hCS-Yp-sui"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-Xy-DtO">
+                                        <rect key="frame" x="0.0" y="107.33333333333333" width="414" height="42.333333333333329"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Chalkduster">
@@ -454,9 +473,12 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="RRq-fo-VjY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOQ-Wq-xL5">
-                                        <rect key="frame" x="0.0" y="107" width="414" height="36"/>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOQ-Wq-xL5">
+                                        <rect key="frame" x="0.0" y="161.66666666666666" width="414" height="36"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Coiny">
@@ -467,9 +489,28 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="cH4-3p-HK2"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-BG-3nn">
-                                        <rect key="frame" x="0.0" y="155" width="414" height="36"/>
+                                    <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeb-Za-77w">
+                                        <rect key="frame" x="0.0" y="209.66666666666669" width="414" height="36.333333333333343"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="CopperPlate">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Copperplate"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="oM4-Ot-cQr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-BG-3nn">
+                                        <rect key="frame" x="0.0" y="258" width="414" height="36"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Courier">
@@ -480,35 +521,44 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="X17-IJ-Rov"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEN-jq-bq9">
-                                        <rect key="frame" x="0.0" y="203" width="414" height="40.666666666666657"/>
+                                    <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-6b-R5S">
+                                        <rect key="frame" x="0.0" y="306" width="414" height="41.666666666666686"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Dancing Script">
+                                                <fragment content="Didot">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="DancingScript-Bold"/>
+                                                        <font key="NSFont" size="24" name="Didot"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="0w9-Ab-npM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq2-DC-rqs">
-                                        <rect key="frame" x="0.0" y="255.66666666666666" width="414" height="40.666666666666657"/>
+                                    <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RO-A2-mDR">
+                                        <rect key="frame" x="0.0" y="359.66666666666669" width="414" height="40.666666666666686"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Mom's Typewriter">
+                                                <fragment content="Helvetica">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="MomsTypewriter"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <font key="NSFont" size="24" name="HelveticaNeue-CondensedBlack"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="hMh-mO-Uuc"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3e-gK-Yhq">
-                                        <rect key="frame" x="0.0" y="308.33333333333331" width="414" height="49"/>
+                                    <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3e-gK-Yhq">
+                                        <rect key="frame" x="0.0" y="412.33333333333331" width="414" height="49"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Papyrus">
@@ -519,45 +569,25 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="PR7-S2-mTq"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeb-Za-77w">
-                                        <rect key="frame" x="0.0" y="369.33333333333331" width="414" height="40.333333333333314"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Raleway">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Raleway-ExtraBold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-Ns-jB3">
-                                        <rect key="frame" x="0.0" y="421.66666666666669" width="414" height="42.333333333333314"/>
+                                    <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-Ns-jB3">
+                                        <rect key="frame" x="0.0" y="473.33333333333337" width="414" height="42.333333333333371"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Snell Roundhand">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="SnellRoundhand-Bold"/>
+                                                        <font key="NSFont" size="24" name="SnellRoundhand-Black"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-6b-R5S">
-                                        <rect key="frame" x="0.0" y="476" width="414" height="57.333333333333371"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Vesper Libre">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="VesperLibre-Heavy"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
+                                        <connections>
+                                            <action selector="fontSelected:" destination="rll-Sl-8jI" eventType="touchUpInside" id="xUw-6S-H10"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -575,15 +605,15 @@
                         <viewLayoutGuide key="safeArea" id="5q5-Ib-uyU"/>
                     </view>
                     <connections>
+                        <outlet property="bradFont" destination="dNI-1x-2jT" id="gt5-sn-2V5"/>
                         <outlet property="coinyFont" destination="lOQ-Wq-xL5" id="uRf-6x-JK0"/>
-                        <outlet property="dancingFont" destination="cEN-jq-bq9" id="MoC-MX-35I"/>
+                        <outlet property="copperFont" destination="Zeb-Za-77w" id="hoz-BR-avc"/>
+                        <outlet property="didotFont" destination="OH1-6b-R5S" id="aqJ-V4-rDk"/>
                         <outlet property="dusterFont" destination="QAV-Xy-DtO" id="HV9-r6-rJa"/>
-                        <outlet property="momFont" destination="bq2-DC-rqs" id="qID-70-9zP"/>
+                        <outlet property="helveticaFont" destination="0RO-A2-mDR" id="Ncy-VF-Hxl"/>
                         <outlet property="papyrusFont" destination="R3e-gK-Yhq" id="IFo-tQ-JHu"/>
-                        <outlet property="ralewayFont" destination="Zeb-Za-77w" id="08B-an-IuD"/>
                         <outlet property="snellFont" destination="xuf-Ns-jB3" id="188-WN-wdr"/>
                         <outlet property="typewriterFont" destination="Api-Z2-ImJ" id="WPp-80-aAt"/>
-                        <outlet property="vesperFont" destination="OH1-6b-R5S" id="MMs-Bd-VZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hs-ap-bwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -611,7 +641,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oMb-6z-rh8"/>
+        <segue reference="Lto-cF-sFX"/>
         <segue reference="gjw-rN-Dwm"/>
     </inferredMetricsTieBreakers>
     <resources>
