@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2660CF8D2474BCBA0037C4EF /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */; };
+		269636D624773D7400945AC7 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269636D524773D7400945AC7 /* Meme.swift */; };
 		26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */; };
 		26E7EA6D24708C98003D11A9 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */; };
 		26E7EA752472F7D1003D11A9 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E7EA712472F7D1003D11A9 /* Raleway-ExtraBold.ttf */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
+		269636D524773D7400945AC7 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextStylesViewController.swift; sourceTree = "<group>"; };
 		26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		26E7EA712472F7D1003D11A9 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraBold.ttf"; path = "../../../Assets/fonts for text/Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				26E7EA6C24708C98003D11A9 /* ColorPickerViewController.swift */,
 				2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */,
 				26F7BB342454C19C007D05EC /* Main.storyboard */,
+				269636D524773D7400945AC7 /* Meme.swift */,
 				26F7BB372454C1A0007D05EC /* Assets.xcassets */,
 				26F7BB392454C1A0007D05EC /* LaunchScreen.storyboard */,
 				26F7BB3C2454C1A0007D05EC /* Info.plist */,
@@ -177,6 +180,7 @@
 			files = (
 				26E7EA6D24708C98003D11A9 /* ColorPickerViewController.swift in Sources */,
 				26F7BB332454C19C007D05EC /* ViewController.swift in Sources */,
+				269636D624773D7400945AC7 /* Meme.swift in Sources */,
 				26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */,
 				26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */,
 				26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */,
