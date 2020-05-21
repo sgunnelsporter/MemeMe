@@ -33,6 +33,8 @@ class EditTextStylesViewController: UIViewController {
     var changeBottomTextColorSegueID = "changeBottomTextColor"
     var changeBottomBorderColorSegueID = "changeBottomBorderColor"
     var setChangesBackToMainSegueID = "setNewTextProperties"
+    var changeTopTextFontSegueID = "changeTopTextFont"
+    var changeBottomTextFontSegueID = "changeBottomTextFont"
     
     
     //MARK: viewDidLoad
@@ -106,6 +108,22 @@ class EditTextStylesViewController: UIViewController {
             
         }
         
+        if segue.identifier == self.changeTopTextFontSegueID {
+            let controller = segue.destination as! FontPickerViewController
+            let topFont = self.topTextProperties![NSAttributedString.Key.font] as! UIFont
+            
+            controller.selectedFont = topFont
+            controller.identifier = StyleSender.topFont
+        }
+        
+        if segue.identifier == self.changeBottomTextFontSegueID {
+            let controller = segue.destination as! FontPickerViewController
+            let bottomFont = self.bottomTextProperties![NSAttributedString.Key.font] as! UIFont
+            
+            controller.selectedFont = bottomFont
+            controller.identifier = StyleSender.bottomFont
+        }
+        
         if segue.identifier == self.setChangesBackToMainSegueID {
             let controller = segue.destination as! ViewController
             
@@ -115,83 +133,32 @@ class EditTextStylesViewController: UIViewController {
         }
     }
     
-    //MARK: Change font button actions
-    @IBAction func changeTopTextFont(_ sender: Any) {
-        let fontController = self.createFontChangerController(StyleSender.topFont, text: self.topText!)
-        if let popoverController = fontController.popoverPresentationController {
-            popoverController.barButtonItem =  sender as? UIBarButtonItem
-        }
-        self.present(fontController, animated: true, completion: nil)
-    }
-    
-    @IBAction func changeBottomTextFont(_ sender: Any) {
-        let fontController = self.createFontChangerController(StyleSender.bottomFont, text: self.bottomText!)
-        if let popoverController = fontController.popoverPresentationController {
-            popoverController.barButtonItem =  sender as? UIBarButtonItem
-        }
-        self.present(fontController, animated: true, completion: nil)
-    }
-    
-    func createFontChangerController(_ id: StyleSender, text: String) -> UIAlertController {
-        // Alert Title
-        let controller = UIAlertController()
-            controller.title = "Choose Font for:"
-            controller.message = text
-        
-        // Alert Fonts
-        let helveticaOption = UIAlertAction(title: "Helvetica Neue", style: UIAlertAction.Style.default) { action in
-            self.setTextFont(id, font: "HelveticaNeue-CondensedBlack")
-        }
-        let courierOption = UIAlertAction(title: "Courier", style: UIAlertAction.Style.default) { action in
-                   self.setTextFont(id, font: "Courier-Bold")
-        }
-        let typewriterOption = UIAlertAction(title: "Typewriter", style: UIAlertAction.Style.default) { action in
-            self.setTextFont(id, font: "AmericanTypewriter-CondensedBold")
-        }
-        let fancyOption = UIAlertAction(title: "Fancy", style: UIAlertAction.Style.default) { action in
-            self.setTextFont(id, font: "SnellRoundhand-Black")
-        }
-        let funOption = UIAlertAction(title: "Fun Font", style: UIAlertAction.Style.default) { action in
-            self.setTextFont(id, font: "PartyLetPlain")
-        }
-        
-        // Alert Cancel
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
-        { action in controller.dismiss(animated: true, completion: nil)}
-
-        // Attach Actions
-        controller.addAction(helveticaOption)
-        controller.addAction(courierOption)
-        controller.addAction(typewriterOption)
-        controller.addAction(fancyOption)
-        controller.addAction(funOption)
-        controller.addAction(cancelAction)
-        
-        // return Alert
-        return controller
-    }
-    
-    func setTextFont(_ id: StyleSender, font: String) {
-        if id == StyleSender.topFont {
-            self.topTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
-        } else if id == StyleSender.bottomFont {
-            self.bottomTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
-        } else {
-            print("ERROR in Setting Text Font!!")
-        }
-        setViewTextDisplays()
-    }
-    
     
     //MARK: Set View Displays
     func setViewTextDisplays() {
         self.topTextDisplay.attributedText = NSAttributedString(string: self.topText ?? "ERROR", attributes: self.topTextProperties)
         self.bottomTextDisplay.attributedText = NSAttributedString(string: self.bottomText ?? "ERROR", attributes: self.bottomTextProperties)
     }
-    //MARK: Unwind back from Color Picker
-     @IBAction func unwindToEditStyles(_ sender: UIStoryboardSegue) {
+    
+    func setTextFont(_ id: StyleSender, font: String) {
+           if id == StyleSender.topFont {
+               self.topTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
+           } else if id == StyleSender.bottomFont {
+               self.bottomTextProperties![NSAttributedString.Key.font] = UIFont(name: font, size: 40)!
+           } else {
+               print("ERROR in Setting Text Font!!")
+           }
+           setViewTextDisplays()
+    }
+    
+    
+    //MARK: Unwind back Pickers
+     @IBAction func unwindColorToEditStyles(_ sender: UIStoryboardSegue) {
          
      }
+    @IBAction func unwindFontToEditStyles(_ sender: UIStoryboardSegue) {
+        
+    }
     
     //MARK: Cancel Button Action
     @IBAction func cancelChanges(_ sender: Any) {

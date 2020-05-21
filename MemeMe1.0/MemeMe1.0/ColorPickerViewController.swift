@@ -23,7 +23,7 @@ class ColorPickerViewController: UIViewController {
     var alphaValue: CGFloat = 1
     var identifier: StyleSender?
     
-    var unwindToStyleEditorSegueID = "unwindToStyleEditor"
+    var unwindColorToStyleEditorSegueID = "unwindColorToStyleEditor"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class ColorPickerViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == self.unwindToStyleEditorSegueID {
+        if segue.identifier == self.unwindColorToStyleEditorSegueID {
             let color = self.colorView.backgroundColor
             let controller = segue.destination as! EditTextStylesViewController
             
