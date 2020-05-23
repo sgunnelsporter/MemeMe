@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CreateMemeViewController.swift
 //  MemeMe1.0
 //
 //  Created by Sarah Gunnels Porter on 4/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
         
     //MARK: View state variables
     var activeTextField: UITextField?
@@ -43,11 +43,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     //MARK: Set-up and Release of ViewController
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // Set defaults
         self.topText.delegate = self
@@ -70,9 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillDisappear(animated)
         
         // Disable notification listening
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setTextDefaults() {
@@ -89,16 +90,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: Image Picking Control
     @IBAction func chooseFromAlbum(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-        present(pickerController, animated: true, completion: nil)
+        self.openImageController(UIImagePickerController.SourceType.photoLibrary)
     }
     
     @IBAction func takeNewPicture(_ sender: Any) {
+        self.openImageController(UIImagePickerController.SourceType.camera)
+    }
+    
+    func openImageController(_ type: UIImagePickerController.SourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .camera
+        pickerController.sourceType = type
         present(pickerController, animated: true, completion: nil)
     }
     
@@ -183,6 +185,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            sharingController.completionWithItemsHandler = {(activity, completed, items, error) in
+                if (completed){
+                    _ = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: finalImage)
+                    //save meme to data modal
+                }
+
+                //Dismiss the shareActivityViewController
+                self.dismiss(animated: true, completion: nil)
+            }
             if let popoverController = sharingController.popoverPresentationController {
               popoverController.barButtonItem = sender as? UIBarButtonItem //UIBarButtonItem(image: finalImage, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
             }
