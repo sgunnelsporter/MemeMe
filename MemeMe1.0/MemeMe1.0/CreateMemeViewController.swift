@@ -90,16 +90,17 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
 
     // MARK: Image Picking Control
     @IBAction func chooseFromAlbum(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-        present(pickerController, animated: true, completion: nil)
+        self.openImageController(UIImagePickerController.SourceType.photoLibrary)
     }
     
     @IBAction func takeNewPicture(_ sender: Any) {
+        self.openImageController(UIImagePickerController.SourceType.camera)
+    }
+    
+    func openImageController(_ type: UIImagePickerController.SourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .camera
+        pickerController.sourceType = type
         present(pickerController, animated: true, completion: nil)
     }
     
