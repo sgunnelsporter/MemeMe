@@ -43,11 +43,14 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     //MARK: Set-up and Release of ViewController
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // If camera is not available on device, disable the camera button
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // Set defaults
         self.topText.delegate = self
