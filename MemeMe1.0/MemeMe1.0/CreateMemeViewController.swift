@@ -73,9 +73,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewWillDisappear(animated)
         
         // Disable notification listening
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setTextDefaults() {
