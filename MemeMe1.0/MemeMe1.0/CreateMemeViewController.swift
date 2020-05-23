@@ -185,6 +185,15 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         // Open Share Controller to share meme
         if let finalImage = theMemeImage {
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
+            sharingController.completionWithItemsHandler = {(activity, completed, items, error) in
+                if (completed){
+                    _ = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: finalImage)
+                    //save meme to data modal
+                }
+
+                //Dismiss the shareActivityViewController
+                self.dismiss(animated: true, completion: nil)
+            }
             if let popoverController = sharingController.popoverPresentationController {
               popoverController.barButtonItem = sender as? UIBarButtonItem //UIBarButtonItem(image: finalImage, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
             }
