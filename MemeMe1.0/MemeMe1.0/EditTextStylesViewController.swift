@@ -125,7 +125,7 @@ class EditTextStylesViewController: UIViewController {
         }
         
         if segue.identifier == self.setChangesBackToMainSegueID {
-            let controller = segue.destination as! ViewController
+            let controller = segue.destination as! CreateMemeViewController
             
             controller.topTextProperties = self.topTextProperties!
             controller.bottomTextProperties = self.bottomTextProperties!

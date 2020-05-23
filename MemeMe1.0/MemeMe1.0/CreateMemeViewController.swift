@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CreateMemeViewController.swift
 //  MemeMe1.0
 //
 //  Created by Sarah Gunnels Porter on 4/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
         
     //MARK: View state variables
     var activeTextField: UITextField?
