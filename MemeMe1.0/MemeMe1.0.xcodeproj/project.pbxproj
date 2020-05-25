@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		261C693D247C528600C2FE33 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C693C247C528600C2FE33 /* SentMemesCollectionViewController.swift */; };
-		261C693F247C529800C2FE33 /* SharedMemesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C693E247C529800C2FE33 /* SharedMemesListViewController.swift */; };
+		261C693F247C529800C2FE33 /* SentMemesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C693E247C529800C2FE33 /* SentMemesListViewController.swift */; };
 		2660CF8D2474BCBA0037C4EF /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */; };
 		269636D624773D7400945AC7 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269636D524773D7400945AC7 /* Meme.swift */; };
 		26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		261C693C247C528600C2FE33 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
-		261C693E247C529800C2FE33 /* SharedMemesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMemesListViewController.swift; sourceTree = "<group>"; };
+		261C693E247C529800C2FE33 /* SentMemesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesListViewController.swift; sourceTree = "<group>"; };
 		2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
 		269636D524773D7400945AC7 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		26E7EA6A24707A5D003D11A9 /* EditTextStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextStylesViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				2660CF8C2474BCBA0037C4EF /* FontPickerViewController.swift */,
 				26F7BB342454C19C007D05EC /* Main.storyboard */,
 				261C693C247C528600C2FE33 /* SentMemesCollectionViewController.swift */,
-				261C693E247C529800C2FE33 /* SharedMemesListViewController.swift */,
+				261C693E247C529800C2FE33 /* SentMemesListViewController.swift */,
 				269636D524773D7400945AC7 /* Meme.swift */,
 				26F7BB372454C1A0007D05EC /* Assets.xcassets */,
 				26F7BB392454C1A0007D05EC /* LaunchScreen.storyboard */,
@@ -190,7 +190,7 @@
 				26F7BB2F2454C19C007D05EC /* AppDelegate.swift in Sources */,
 				26F7BB312454C19C007D05EC /* SceneDelegate.swift in Sources */,
 				261C693D247C528600C2FE33 /* SentMemesCollectionViewController.swift in Sources */,
-				261C693F247C529800C2FE33 /* SharedMemesListViewController.swift in Sources */,
+				261C693F247C529800C2FE33 /* SentMemesListViewController.swift in Sources */,
 				26E7EA6B24707A5D003D11A9 /* EditTextStylesViewController.swift in Sources */,
 				2660CF8D2474BCBA0037C4EF /* FontPickerViewController.swift in Sources */,
 			);

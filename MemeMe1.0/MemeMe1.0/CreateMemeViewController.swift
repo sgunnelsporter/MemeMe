@@ -187,8 +187,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
             sharingController.completionWithItemsHandler = {(activity, completed, items, error) in
                 if (completed){
-                    _ = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: finalImage)
-                    //save meme to data modal
+                    self.save(finalImage)
                 }
 
                 //Dismiss the shareActivityViewController
@@ -202,6 +201,16 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             print("Error creating Meme Image!")
         }
         
+    }
+    
+    func save(_ memedImage: UIImage) {
+        // Create the meme
+        let meme = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: memedImage)
+
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     //MARK: Resetting for new Meme

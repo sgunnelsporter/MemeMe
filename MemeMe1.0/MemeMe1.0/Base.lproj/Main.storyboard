@@ -640,10 +640,10 @@
             </objects>
             <point key="canvasLocation" x="-1167" y="-1277"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Sent Memes Collection View Controller-->
         <scene sceneID="ni3-Z1-BIq">
             <objects>
-                <collectionViewController id="ogV-5Q-3Oc" sceneMemberID="viewController">
+                <collectionViewController id="ogV-5Q-3Oc" customClass="SentMemesCollectionViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ugD-m5-5zn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -675,10 +675,10 @@
             </objects>
             <point key="canvasLocation" x="683" y="-1616"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sent Memes List View Controller-->
         <scene sceneID="ReG-Cz-rOY">
             <objects>
-                <tableViewController id="zlI-D5-nKK" sceneMemberID="viewController">
+                <tableViewController id="zlI-D5-nKK" customClass="SentMemesListViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZBC-oj-Hux">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -707,7 +707,6 @@
         <!--Item-->
         <scene sceneID="562-kS-wKT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycc-sq-B7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="partialCurl" id="GM1-Dq-sHX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="bOo-45-YmY"/>
                     <toolbarItems/>
@@ -720,6 +719,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hOv-RZ-eGL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycc-sq-B7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="130"/>
         </scene>
