@@ -213,12 +213,11 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
     }
     
-    //MARK: Resetting for new Meme
-    @IBAction func resetMeme(_ sender: Any) {
-        self.bottomText.text = "BOTTOM TEXT"
-        self.topText.text = "TOP TEXT"
-        self.setTextDefaults()
-        self.setImage(image: UIImage(named: "DefaultImage"))
+    //MARK: Cancel Button
+    // Formerly Resetting for new Meme
+    // In version 2.0 this dismisses the Meme Editor view, resetting will occur when the view appears again
+    @IBAction func cancelMeme(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

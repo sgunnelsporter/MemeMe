@@ -9,16 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Omz-Af-sc2">
+            <objects>
+                <navigationController id="nkF-i5-cYw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cc9-2w-vM8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c0K-jX-BeS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unM-4i-8PP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="-1961"/>
+        </scene>
         <!--Create New Meme-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="CreateMemeViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Q0-5C-MCv">
-                                <rect key="frame" x="57" y="108" width="300" height="500"/>
+                                <rect key="frame" x="57" y="118" width="300" height="500"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" adjustable="YES"/>
                                 </accessibility>
@@ -28,7 +44,7 @@
                                 </constraints>
                             </imageView>
                             <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-cQ-kc2">
-                                <rect key="frame" x="0.0" y="128" width="414" height="33"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="33"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -37,7 +53,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-dR-CeX">
-                                <rect key="frame" x="0.0" y="555" width="414" height="33"/>
+                                <rect key="frame" x="0.0" y="565" width="414" height="33"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -46,7 +62,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-lx-Dg8">
-                                <rect key="frame" x="0.0" y="672" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="638" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x58-ez-NoL"/>
                                     <barButtonItem image="camera.fill" catalog="system" id="Uw3-n7-Bmr" userLabel="CameraButton">
@@ -85,7 +101,7 @@
                     <navigationItem key="navigationItem" title="Create New Meme" id="7If-AA-1ef">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="77A-Sl-y66">
                             <connections>
-                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
+                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="hbz-g4-Wxn"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -685,7 +701,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="0cK-qM-GCP">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="xor-g6-Lbz">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="rqT-fQ-yQe"/>
+                                <segue destination="nkF-i5-cYw" kind="showDetail" id="Ra2-v4-1WQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -706,24 +722,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sentMemeTableCell" textLabel="zTJ-Yl-mtI" detailTextLabel="Pfu-Uj-bze" style="IBUITableViewCellStyleSubtitle" id="DfL-Rs-iX5">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sentMemeTableCell" textLabel="zTJ-Yl-mtI" style="IBUITableViewCellStyleDefault" id="DfL-Rs-iX5">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DfL-Rs-iX5" id="S0c-Vq-LrU">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zTJ-Yl-mtI">
-                                            <rect key="frame" x="20.000000000000004" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pfu-Uj-bze">
-                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -739,7 +748,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes List" id="TTn-p9-pHc" userLabel="Sent Memes">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="gBF-Yb-3Qp">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="CH9-cN-wuC"/>
+                                <segue destination="nkF-i5-cYw" kind="showDetail" id="eP8-gH-Opp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -790,7 +799,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Lto-cF-sFX"/>
         <segue reference="gjw-rN-Dwm"/>
-        <segue reference="CH9-cN-wuC"/>
+        <segue reference="Ra2-v4-1WQ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DefaultImage" width="1813" height="3022"/>
