@@ -55,6 +55,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         // Set defaults
         self.topText.delegate = self
         self.bottomText.delegate = self
+        self.setTextDefaults()
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -65,7 +66,6 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.setTextDefaults()
         self.setImage(image: UIImage(named: "DefaultImage"))
     }
     
@@ -208,8 +208,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         let meme = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: memedImage)
 
         // Add it to the memes array in the Application Delegate
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
     }
     

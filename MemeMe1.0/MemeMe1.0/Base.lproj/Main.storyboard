@@ -671,7 +671,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sentMemeCollectionCell" id="6Vm-KQ-am7" customClass="SentMemeCollectionCell" customModule="MemeMe1_0" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SentMemeCollectionCell" id="6Vm-KQ-am7" customClass="SentMemeCollectionCell" customModule="MemeMe1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XS4-PR-Js9">
@@ -691,6 +691,9 @@
                                         <constraint firstAttribute="bottom" secondItem="m4w-ru-IaV" secondAttribute="bottom" id="yhu-zX-ir8"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="sentMemeImage" destination="m4w-ru-IaV" id="kZp-fg-crt"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -778,6 +781,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vWP-J4-vhj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Meme" id="rAV-b1-sRN">
+                        <barButtonItem key="rightBarButtonItem" title="ShareAgain" image="square.and.arrow.up" catalog="system" id="6zD-g5-Pje"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="memeImageView" destination="QSP-ik-tEh" id="pt8-YV-tKn"/>
                     </connections>
