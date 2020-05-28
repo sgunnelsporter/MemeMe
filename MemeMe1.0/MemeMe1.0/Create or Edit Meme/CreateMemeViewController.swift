@@ -55,6 +55,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         // Set defaults
         self.topText.delegate = self
         self.bottomText.delegate = self
+        self.setTextDefaults()
         
         // Set-up notification listening for keyboard actions
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -65,7 +66,6 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.setTextDefaults()
         self.setImage(image: UIImage(named: "DefaultImage"))
     }
     
@@ -187,8 +187,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             let sharingController = UIActivityViewController(activityItems: [finalImage], applicationActivities:[])
             sharingController.completionWithItemsHandler = {(activity, completed, items, error) in
                 if (completed){
-                    _ = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: finalImage)
-                    //save meme to data modal
+                    self.save(finalImage)
                 }
 
                 //Dismiss the shareActivityViewController
@@ -204,12 +203,20 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     
-    //MARK: Resetting for new Meme
-    @IBAction func resetMeme(_ sender: Any) {
-        self.bottomText.text = "BOTTOM TEXT"
-        self.topText.text = "TOP TEXT"
-        self.setTextDefaults()
-        self.setImage(image: UIImage(named: "DefaultImage"))
+    func save(_ memedImage: UIImage) {
+        // Create the meme
+        let meme = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: memedImage)
+
+        // Add it to the memes array in the Application Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
+    
+    //MARK: Cancel Button
+    // Formerly Resetting for new Meme
+    // In version 2.0 this dismisses the Meme Editor view, resetting will occur when the view appears again
+    @IBAction func cancelMeme(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
