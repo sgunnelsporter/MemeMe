@@ -15,6 +15,7 @@
 		26449C2A2482B2A200C11E89 /* MemeMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26449C282482B2A200C11E89 /* MemeMe.xcdatamodeld */; };
 		26449C2C2482B2A600C11E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26449C2B2482B2A600C11E89 /* Assets.xcassets */; };
 		26449C2F2482B2A600C11E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26449C2D2482B2A600C11E89 /* LaunchScreen.storyboard */; };
+		26449C392482B66000C11E89 /* Meme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C382482B66000C11E89 /* Meme+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		26449C2B2482B2A600C11E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26449C2E2482B2A600C11E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26449C302482B2A600C11E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26449C382482B66000C11E89 /* Meme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				26449C2B2482B2A600C11E89 /* Assets.xcassets */,
 				26449C2D2482B2A600C11E89 /* LaunchScreen.storyboard */,
 				26449C302482B2A600C11E89 /* Info.plist */,
+				26449C382482B66000C11E89 /* Meme+CoreDataProperties.swift */,
 				26449C282482B2A200C11E89 /* MemeMe.xcdatamodeld */,
 			);
 			path = MemeMe;
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26449C242482B2A200C11E89 /* SecondViewController.swift in Sources */,
+				26449C392482B66000C11E89 /* Meme+CoreDataProperties.swift in Sources */,
 				26449C222482B2A200C11E89 /* FirstViewController.swift in Sources */,
 				26449C2A2482B2A200C11E89 /* MemeMe.xcdatamodeld in Sources */,
 				26449C1E2482B2A200C11E89 /* AppDelegate.swift in Sources */,
