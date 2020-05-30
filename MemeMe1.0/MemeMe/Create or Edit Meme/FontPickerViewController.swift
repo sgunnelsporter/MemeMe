@@ -12,23 +12,17 @@ class FontPickerViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK: Fonts
     var fontButtons: [Font]! = Font.allFonts
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: Properties
     var unwindFontToEditStylesSegueID = "unwindFontToEditStyles"
     var fontTableCellID = "fontTableCell"
     var selectedFont: UIFont?
     var identifier: StyleSender?
-
+    
+    //MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // highlight table cell for passed in font value
-        
-        for f in fontButtons {
-            if f.fontSysName.fontName == self.selectedFont?.fontName {
-                
-            }
-        }
-
     }
     
     //MARK: Table View Count
@@ -44,6 +38,10 @@ class FontPickerViewController: UIViewController, UITableViewDataSource, UITable
         
         // Set the name and image
         cell.textLabel?.attributedText = NSAttributedString(string: thisFont.fontName, attributes: [NSAttributedString.Key.font : thisFont.fontSysName])
+        
+        if thisFont.fontSysName.fontName == self.selectedFont?.fontName {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
         
         return cell
     }
