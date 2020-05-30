@@ -21,6 +21,7 @@
 		26449C8A2482C52800C11E89 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C862482C52800C11E89 /* ColorPickerViewController.swift */; };
 		26449C8B2482C52800C11E89 /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C872482C52800C11E89 /* FontPickerViewController.swift */; };
 		26449C8C2482C52800C11E89 /* CreateMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C882482C52800C11E89 /* CreateMemeViewController.swift */; };
+		26449C8F2482DEB500C11E89 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C8E2482DEB500C11E89 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		26449C862482C52800C11E89 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		26449C872482C52800C11E89 /* FontPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
 		26449C882482C52800C11E89 /* CreateMemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemeViewController.swift; sourceTree = "<group>"; };
+		26449C8E2482DEB500C11E89 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +91,11 @@
 		26449C842482C52800C11E89 /* Create or Edit Meme */ = {
 			isa = PBXGroup;
 			children = (
+				26449C882482C52800C11E89 /* CreateMemeViewController.swift */,
 				26449C852482C52800C11E89 /* EditTextStylesViewController.swift */,
 				26449C862482C52800C11E89 /* ColorPickerViewController.swift */,
 				26449C872482C52800C11E89 /* FontPickerViewController.swift */,
-				26449C882482C52800C11E89 /* CreateMemeViewController.swift */,
+				26449C8E2482DEB500C11E89 /* Font.swift */,
 			);
 			name = "Create or Edit Meme";
 			path = "../../MemeMe1.0/MemeMe/Create or Edit Meme";
@@ -187,6 +190,7 @@
 				26449C7B2482B8F400C11E89 /* Meme.swift in Sources */,
 				26449C7F2482BA6800C11E89 /* SentMemesCollectionViewController.swift in Sources */,
 				26449C892482C52800C11E89 /* EditTextStylesViewController.swift in Sources */,
+				26449C8F2482DEB500C11E89 /* Font.swift in Sources */,
 				26449C672482B8A200C11E89 /* AppDelegate.swift in Sources */,
 				26449C692482B8A200C11E89 /* SceneDelegate.swift in Sources */,
 				26449C7D2482B93100C11E89 /* MemeDetailViewController.swift in Sources */,
