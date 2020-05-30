@@ -14,6 +14,7 @@
 		26449C702482B8A500C11E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26449C6F2482B8A500C11E89 /* Assets.xcassets */; };
 		26449C732482B8A500C11E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26449C712482B8A500C11E89 /* LaunchScreen.storyboard */; };
 		26449C7B2482B8F400C11E89 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C7A2482B8F400C11E89 /* Meme.swift */; };
+		26449C7D2482B93100C11E89 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26449C7C2482B93000C11E89 /* MemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		26449C722482B8A500C11E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26449C742482B8A500C11E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26449C7A2482B8F400C11E89 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meme.swift; path = ../../MemeMe1.0/MemeMe/Meme.swift; sourceTree = "<group>"; };
+		26449C7C2482B93000C11E89 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeDetailViewController.swift; path = ../../MemeMe1.0/MemeMe/MemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				26449C662482B8A200C11E89 /* AppDelegate.swift */,
 				26449C682482B8A200C11E89 /* SceneDelegate.swift */,
 				26449C6A2482B8A200C11E89 /* ViewController.swift */,
+				26449C7C2482B93000C11E89 /* MemeDetailViewController.swift */,
 				26449C6C2482B8A200C11E89 /* Main.storyboard */,
 				26449C6F2482B8A500C11E89 /* Assets.xcassets */,
 				26449C712482B8A500C11E89 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				26449C7B2482B8F400C11E89 /* Meme.swift in Sources */,
 				26449C672482B8A200C11E89 /* AppDelegate.swift in Sources */,
 				26449C692482B8A200C11E89 /* SceneDelegate.swift in Sources */,
+				26449C7D2482B93100C11E89 /* MemeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
