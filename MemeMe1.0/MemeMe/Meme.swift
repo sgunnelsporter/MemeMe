@@ -15,3 +15,9 @@ struct Meme {
     var bottomText : NSAttributedString?
     var memedImage : UIImage?
 }
+
+extension Meme {
+    func loadTestingMemes() {
+        
+    }
+}

@@ -10,22 +10,14 @@ import UIKit
 
 class SentMemesListViewController: UITableViewController {
 
-    var memes: [Meme]!
+    var memes: [Meme]! {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.memes
+    }
     var detailVCID : String = "MemeDetailViewController"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.loadMemes()
-    }
-    override func viewDidAppear(_ animated: Bool){
-        super.viewDidAppear(animated)
-
-        self.loadMemes()
-    }
-    
-    func loadMemes() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.memes = appDelegate.memes
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

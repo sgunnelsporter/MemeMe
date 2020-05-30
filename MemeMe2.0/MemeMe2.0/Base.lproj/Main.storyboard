@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q9B-ef-8ZJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -31,7 +31,9 @@
                             <outlet property="delegate" destination="jvJ-3E-38t" id="znk-fx-n9B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3xz-dl-cyq"/>
+                    <navigationItem key="navigationItem" id="3xz-dl-cyq">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="OY2-Yv-577"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYj-fY-xXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +68,9 @@
                             <outlet property="delegate" destination="Ysv-sc-MqL" id="ohW-4m-PeW"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="d54-e2-iEf"/>
+                    <navigationItem key="navigationItem" id="d54-e2-iEf">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Pnj-QY-3rO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="flowLayout" destination="dZ2-cg-LS9" id="0sC-un-OmC"/>
                     </connections>
@@ -163,6 +167,7 @@
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
     </resources>
 </document>

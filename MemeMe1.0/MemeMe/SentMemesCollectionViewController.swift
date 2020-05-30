@@ -14,12 +14,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
      var detailVCID : String = "MemeDetailViewController"
     
-   var memes: [Meme]!
-      
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.loadMemes()
+    var memes: [Meme]! {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.memes
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,16 +30,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
         
 
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.loadMemes()
-    }
-    
-    func loadMemes() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.memes = appDelegate.memes
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
