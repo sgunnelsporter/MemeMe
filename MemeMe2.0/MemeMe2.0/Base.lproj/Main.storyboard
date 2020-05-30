@@ -99,9 +99,17 @@
                                 <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uiB-MB-EGu"/>
-                                    <barButtonItem title="Item" image="camera.fill" catalog="system" id="1cb-e8-373"/>
+                                    <barButtonItem title="Item" image="camera.fill" catalog="system" id="1cb-e8-373">
+                                        <connections>
+                                            <action selector="takeNewPicture:" destination="ba0-XT-U2M" id="lo4-9P-o61"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="NQU-Ph-Nur"/>
-                                    <barButtonItem title="Album" id="A6b-Wf-vaE"/>
+                                    <barButtonItem title="Album" id="A6b-Wf-vaE">
+                                        <connections>
+                                            <action selector="chooseFromAlbum:" destination="ba0-XT-U2M" id="4Mf-oE-Ysp"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="f3e-Sr-lsx"/>
                                 </items>
                             </toolbar>
@@ -142,12 +150,29 @@
                         <viewLayoutGuide key="safeArea" id="dfd-1m-FX5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Meme" id="Kt4-ZD-jeR">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="FC0-H8-1hY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="FC0-H8-1hY">
+                            <connections>
+                                <action selector="cancelMeme:" destination="ba0-XT-U2M" id="hoM-sJ-xBv"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="square.and.arrow.up" catalog="system" id="v6Y-nx-SkF"/>
+                            <barButtonItem image="square.and.arrow.up" catalog="system" id="v6Y-nx-SkF">
+                                <connections>
+                                    <action selector="shareMeme:" destination="ba0-XT-U2M" id="wsb-Zm-uoM"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="paintbrush" catalog="system" id="WU3-Kw-SRd"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomText" destination="EvZ-WM-4Hb" id="B0P-oD-V4W"/>
+                        <outlet property="cameraButton" destination="1cb-e8-373" id="UiJ-ve-yPA"/>
+                        <outlet property="imageViewHeightConstraint" destination="Wat-my-GiO" id="Hd3-Is-Zil"/>
+                        <outlet property="imageViewWidthConstraint" destination="3MH-hD-H6Q" id="h6I-MP-hO1"/>
+                        <outlet property="memeImage" destination="Afj-hd-4UM" id="toi-zm-f7R"/>
+                        <outlet property="shareButton" destination="v6Y-nx-SkF" id="Ibi-xb-3mL"/>
+                        <outlet property="topText" destination="6zc-gF-JZA" id="FmX-6h-PtD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmk-LK-KLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
