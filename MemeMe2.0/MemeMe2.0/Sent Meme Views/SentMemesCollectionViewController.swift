@@ -13,6 +13,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
     
      var detailVCID : String = "MemeDetailViewController"
+    var SentMemeCollectionCellID = "SentMemeCollectionCell"
     
     var memes: [Meme]!
     
@@ -44,7 +45,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionCell", for: indexPath) as! SentMemeCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.SentMemeCollectionCellID, for: indexPath) as! SentMemeCollectionCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
 
         // Set the name and image
