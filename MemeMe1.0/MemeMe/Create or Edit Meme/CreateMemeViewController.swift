@@ -191,7 +191,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
                 }
 
                 //Dismiss the shareActivityViewController
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: { })
             }
             if let popoverController = sharingController.popoverPresentationController {
               popoverController.barButtonItem = sender as? UIBarButtonItem //UIBarButtonItem(image: finalImage, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
