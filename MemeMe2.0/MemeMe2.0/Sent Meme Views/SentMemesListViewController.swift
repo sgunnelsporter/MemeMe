@@ -16,6 +16,7 @@ class SentMemesListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadData()
+        self.tableView.reloadData()
     }
     
     func loadData() {
