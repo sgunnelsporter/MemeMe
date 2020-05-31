@@ -624,6 +624,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q9B-ef-8ZJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qeQ-5f-kJK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -670,7 +671,7 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
         <namedColor name="MemeGray">
-            <color red="0.6705882353" green="0.66274509800000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67100000381469727" green="0.66299998760223389" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
