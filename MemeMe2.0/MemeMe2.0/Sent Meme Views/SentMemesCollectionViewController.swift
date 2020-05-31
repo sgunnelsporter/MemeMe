@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationCenter
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
@@ -17,26 +18,29 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     var memes: [Meme]!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.loadData()
-        self.collectionView.reloadData()
         
-       let space:CGFloat = 8.0
+        let space : CGFloat = 8.0
         let wDimension = (view.frame.size.width - (2 * space)) / 3.0
-        let hDimension = (view.frame.size.height - (2 * space)) / 3.0
+        let hDimension = (view.frame.size.height - (2 * space)) / 4.0
 
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: wDimension, height: hDimension)
-    
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loadData()
+        self.collectionView.reloadData()
     }
     
     func loadData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memes = appDelegate.memes
     }
-    
+        
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }
@@ -55,5 +59,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
         cell.sentMemeImage.image = meme.memedImage
 
         return cell
+    }
+    
+    @objc func memeWasShared(_ notification:Notification){
+        
     }
 }
