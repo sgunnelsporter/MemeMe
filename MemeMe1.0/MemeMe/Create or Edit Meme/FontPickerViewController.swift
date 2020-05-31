@@ -8,53 +8,48 @@
 
 import UIKit
 
-class FontPickerViewController: UIViewController  {
+class FontPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    //MARK: BUttons
-    @IBOutlet weak var typewriterFont: UIButton!
-    @IBOutlet weak var bradFont: UIButton!
-    @IBOutlet weak var dusterFont: UIButton!
-    @IBOutlet weak var coinyFont: UIButton!
-    @IBOutlet weak var papyrusFont: UIButton!
-    @IBOutlet weak var copperFont: UIButton!
-    @IBOutlet weak var didotFont: UIButton!
-    @IBOutlet weak var snellFont: UIButton!
-    @IBOutlet weak var helveticaFont: UIButton!
+    //MARK: Fonts
+    var fontButtons: [Font]! = Font.allFonts
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: Properties
     var unwindFontToEditStylesSegueID = "unwindFontToEditStyles"
+    var fontTableCellID = "fontTableCell"
     var selectedFont: UIFont?
     var identifier: StyleSender?
-    var numberOfButtons : Int = 10
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    //MARK: viewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    //MARK: Table View Count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.fontButtons.count
+    }
+    
+    //MARK: Table View Cells
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // highlight passed in font value
-        for tagValue in 101...(100+numberOfButtons)
-        {
-            let button = self.view.viewWithTag(tagValue) as! UIButton
-            let buttonFont = button.attributedTitle(for: UIControl.State.normal)!.attribute(NSAttributedString.Key.font, at: 0, effectiveRange: nil) as! UIFont
-            if  buttonFont.fontName == selectedFont?.fontName {
-                button.isSelected = true
-            }
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.fontTableCellID)!
+        let thisFont = self.fontButtons[(indexPath as NSIndexPath).row]
+        
+        // Set the name and image
+        cell.textLabel?.attributedText = NSAttributedString(string: thisFont.fontName, attributes: [NSAttributedString.Key.font : thisFont.fontSysName])
+        
+        if thisFont.fontSysName.fontName == self.selectedFont?.fontName {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
+        
+        return cell
     }
     
-    @IBAction func fontSelected(_ sender: UIButton) {
-        let newFont = sender.attributedTitle(for: UIControl.State.normal)?.attribute(NSAttributedString.Key.font, at: 0, effectiveRange: nil) as! UIFont
-        print(newFont.fontName)
-        self.disableButtons()
-        sender.isSelected = true
-        self.selectedFont = UIFont(name: newFont.fontName, size: 40)
-    }
-    
-    func disableButtons() {
-        for tagValue in 101...(100+numberOfButtons)
-        {
-            let button = self.view.viewWithTag(tagValue) as! UIButton
-            button.isSelected = false
-        }
+    //MARK: Table View Selection Action
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newFont = self.fontButtons[indexPath.row]
+        self.selectedFont = UIFont(name: newFont.fontSysName.fontName, size: 40)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
