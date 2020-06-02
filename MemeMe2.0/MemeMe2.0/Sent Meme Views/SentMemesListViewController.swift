@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class SentMemesListViewController: UITableViewController {
 
     var memes: [Meme]!
@@ -40,4 +40,4 @@ class SentMemesListViewController: UITableViewController {
         cell?.imageView?.image = self.memes[indexPath.row].memedImage
         return cell!
     }
-}
+}*/

@@ -205,11 +205,11 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     
     func save(_ memedImage: UIImage) {
         // Create the meme
-        let meme = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: memedImage)
+        //let meme = Meme(image: self.memeImage.image, topText: self.topText.attributedText, bottomText: self.bottomText.attributedText, memedImage: memedImage)
 
         // Add it to the memes array in the Application Delegate
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
+       // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //appDelegate.memes.append(meme)
     }
     
     //MARK: Cancel Button

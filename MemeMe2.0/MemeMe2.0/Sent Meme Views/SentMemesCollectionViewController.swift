@@ -8,16 +8,14 @@
 
 import UIKit
 import NotificationCenter
-
+/*
 class SentMemesCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
     
      var detailVCID : String = "MemeDetailViewController"
     var SentMemeCollectionCellID = "SentMemeCollectionCell"
-    
-    var memes: [Meme]!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadData()
@@ -64,4 +62,4 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @objc func memeWasShared(_ notification:Notification){
         
     }
-}
+}*/
