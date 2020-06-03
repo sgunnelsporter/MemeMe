@@ -3,7 +3,7 @@
     <entity name="Meme" representedClassName=".Meme" syncable="YES" codeGenerationType="class">
         <attribute name="bottomFontName" optional="YES" attributeType="String"/>
         <attribute name="bottomText" optional="YES" attributeType="String"/>
-        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="memedImage" optional="YES" attributeType="Binary"/>
         <attribute name="memeID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="originalImage" optional="YES" attributeType="Binary"/>
