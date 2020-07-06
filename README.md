@@ -1,4 +1,4 @@
 # MemeMe
-Udacity course work for MemeMe version 1.0 
+Udacity course work for MemeMe version 1.0 & 2.0
 
-MemeMe version 2.0 to be included here at a later date.
+Currently working on MemeMe 2.5, translating the Swift code into the newer SwiftUI format
